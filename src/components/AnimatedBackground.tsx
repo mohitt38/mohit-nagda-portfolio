@@ -24,11 +24,9 @@ export function AnimatedBackground() {
     const pointer = { x: -9999, y: -9999 }
 
     const resize = () => {
-      const parent = canvas.parentElement
-      if (!parent) return
-      width = parent.clientWidth
-      height = parent.clientHeight
-      const ratio = Math.min(window.devicePixelRatio || 1, 2)
+      width = window.innerWidth
+      height = window.innerHeight
+      const ratio = Math.min(window.devicePixelRatio || 1, width < 720 ? 1.5 : 2)
       canvas.width = Math.floor(width * ratio)
       canvas.height = Math.floor(height * ratio)
       canvas.style.width = `${width}px`
@@ -38,7 +36,7 @@ export function AnimatedBackground() {
 
     const seed = () => {
       particles.length = 0
-      const count = width < 720 ? 18 : 32
+      const count = width < 720 ? 22 : 42
       for (let i = 0; i < count; i += 1) {
         particles.push({
           x: Math.random() * width,
@@ -72,10 +70,18 @@ export function AnimatedBackground() {
       }
 
       particles.forEach((particle) => {
-        const near = Math.hypot(particle.x - pointer.x, particle.y - pointer.y) < 140
-        context.fillStyle = near ? "rgba(183, 166, 255, 0.85)" : "rgba(232, 236, 244, 0.72)"
+        const dist = Math.hypot(particle.x - pointer.x, particle.y - pointer.y)
+        const near = dist < 180
+        if (near && pointer.x > -1000) {
+          context.strokeStyle = `rgba(183, 166, 255, ${0.28 * (1 - dist / 180)})`
+          context.beginPath()
+          context.moveTo(particle.x, particle.y)
+          context.lineTo(pointer.x, pointer.y)
+          context.stroke()
+        }
+        context.fillStyle = near ? "rgba(183, 166, 255, 0.95)" : "rgba(232, 236, 244, 0.72)"
         context.beginPath()
-        context.arc(particle.x, particle.y, near ? 2.2 : 1.4, 0, Math.PI * 2)
+        context.arc(particle.x, particle.y, near ? 2.4 : 1.4, 0, Math.PI * 2)
         context.fill()
       })
     }
@@ -83,6 +89,26 @@ export function AnimatedBackground() {
     const step = () => {
       if (!reduce) {
         particles.forEach((particle) => {
+          if (pointer.x > -1000) {
+            const dx = pointer.x - particle.x
+            const dy = pointer.y - particle.y
+            const dist = Math.hypot(dx, dy) || 1
+            if (dist < 280) {
+              const pull = (1 - dist / 280) * 0.09
+              particle.vx += (dx / dist) * pull
+              particle.vy += (dy / dist) * pull
+            }
+          }
+          particle.vx *= 0.985
+          particle.vy *= 0.985
+          const speed = Math.hypot(particle.vx, particle.vy)
+          if (speed > 1.35) {
+            particle.vx = (particle.vx / speed) * 1.35
+            particle.vy = (particle.vy / speed) * 1.35
+          } else if (speed < 0.04) {
+            particle.vx += (Math.random() - 0.5) * 0.05
+            particle.vy += (Math.random() - 0.5) * 0.05
+          }
           particle.x += particle.vx
           particle.y += particle.vy
           if (particle.x < 0 || particle.x > width) particle.vx *= -1
@@ -93,10 +119,10 @@ export function AnimatedBackground() {
       if (!reduce && !document.hidden) frame = window.requestAnimationFrame(step)
     }
 
+    const finePointer = window.matchMedia("(pointer: fine)").matches
     const onPointer = (event: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect()
-      pointer.x = event.clientX - rect.left
-      pointer.y = event.clientY - rect.top
+      pointer.x = event.clientX
+      pointer.y = event.clientY
     }
     const onLeave = () => {
       pointer.x = -9999
@@ -113,16 +139,20 @@ export function AnimatedBackground() {
       draw()
     }
     window.addEventListener("resize", onResize)
-    canvas.addEventListener("pointermove", onPointer)
-    canvas.addEventListener("pointerleave", onLeave)
+    window.visualViewport?.addEventListener("resize", onResize)
+    if (finePointer) {
+      window.addEventListener("pointermove", onPointer, { passive: true })
+      window.addEventListener("pointerleave", onLeave)
+    }
 
     return () => {
       window.cancelAnimationFrame(frame)
       window.removeEventListener("resize", onResize)
-      canvas.removeEventListener("pointermove", onPointer)
-      canvas.removeEventListener("pointerleave", onLeave)
+      window.visualViewport?.removeEventListener("resize", onResize)
+      window.removeEventListener("pointermove", onPointer)
+      window.removeEventListener("pointerleave", onLeave)
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden="true" />
+  return <canvas ref={canvasRef} className="block h-full w-full" aria-hidden="true" />
 }

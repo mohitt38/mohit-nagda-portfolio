@@ -7,25 +7,25 @@ export function Experience() {
 
   return (
     <section id="experience" className="border-t border-white/10">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
+      <div className="shell py-24">
         <SectionHeading
           index="02"
           eyebrow="Experience"
           title="Learning, then building."
           lede="Three roles so far. The through-line is the same: take a real problem, work it in Python or in a research setting, and leave something that can be evaluated."
         />
-        <ol className="relative mt-16 space-y-12 border-l border-white/15 pl-6 sm:pl-10">
+        <ol className="relative mt-16 space-y-12 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-white/15">
           {experience.map((item, index) => (
             <motion.li
               key={item.id}
-              initial={reduce ? false : { opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -10% 0px" }}
               transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : index * 0.05 }}
-              className="relative"
+              className="relative pl-10"
             >
               <span
-                className={`absolute top-1.5 -left-[1.72rem] h-3 w-3 rounded-full border border-ink sm:-left-[2.72rem] ${
+                className={`absolute top-1.5 left-0 h-3 w-3 rounded-full border border-ink ${
                   item.current ? "bg-blue" : "bg-mist"
                 }`}
                 aria-hidden="true"

@@ -1,21 +1,12 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { ArrowUpRight, ChevronDown } from "lucide-react"
-import { useState, type MouseEvent } from "react"
+import { useState } from "react"
 import type { Project } from "../data/projects"
 import { ProjectVisual } from "./ProjectVisual"
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [open, setOpen] = useState(false)
-  const [tilt, setTilt] = useState({ x: 0, y: 0 })
   const reduce = useReducedMotion()
-
-  function onMove(event: MouseEvent<HTMLElement>) {
-    if (reduce) return
-    const rect = event.currentTarget.getBoundingClientRect()
-    const px = (event.clientX - rect.left) / rect.width
-    const py = (event.clientY - rect.top) / rect.height
-    setTilt({ x: (0.5 - py) * 6, y: (px - 0.5) * 7 })
-  }
 
   return (
     <motion.article
@@ -23,23 +14,16 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -8% 0px" }}
       transition={{ duration: reduce ? 0 : 0.65, delay: reduce ? 0 : index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-      onMouseMove={onMove}
-      onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-      className="group [perspective:1100px]"
+      style={{ borderColor: `${project.accent}55` }}
+      whileHover={reduce ? undefined : { y: -8 }}
+      className="group relative overflow-hidden border border-white/10 bg-panel/80 transition-shadow duration-300 hover:shadow-[0_22px_50px_rgba(0,0,0,0.35)]"
     >
-      <div
-        style={{
-          transform: reduce ? undefined : `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-          borderColor: `${project.accent}55`,
-        }}
-        className="relative overflow-hidden border border-white/10 bg-panel/80 transition-shadow duration-300 group-hover:shadow-[0_24px_60px_rgba(0,0,0,0.35)]"
-      >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{ background: `linear-gradient(135deg, ${project.accent}22, transparent 42%)` }}
       />
-      <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div className="relative min-h-56 overflow-hidden border-b border-white/10 lg:border-r lg:border-b-0">
+      <div className="grid items-stretch lg:grid-cols-2">
+        <div className="relative min-h-72 overflow-hidden border-b border-white/10 lg:min-h-full lg:border-r lg:border-b-0">
           <ProjectVisual id={project.visual} accent={project.accent} />
         </div>
         <div className="relative flex flex-col p-6 sm:p-8">
@@ -94,7 +78,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             ) : null}
           </AnimatePresence>
         </div>
-      </div>
       </div>
     </motion.article>
   )

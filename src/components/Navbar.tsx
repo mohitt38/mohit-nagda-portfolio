@@ -34,7 +34,7 @@ export function Navbar({ active }: { active: string }) {
           scrolled || open ? "border-b border-white/10 bg-ink/90 backdrop-blur-md" : "bg-transparent"
         }`}
       >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6">
+      <div className="shell flex h-16 items-center justify-between">
         <a href="#home" className="font-display text-sm tracking-[0.18em] text-ivory uppercase">
           Mohit Nagda
         </a>

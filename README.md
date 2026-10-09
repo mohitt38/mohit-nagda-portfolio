@@ -103,7 +103,7 @@ No API keys are used. `.env.example` documents that. Do not commit secrets. `.en
 Mohit Nagda  
 Udaipur, Rajasthan, India  
 [nagdamohit19@gmail.com](mailto:nagdamohit19@gmail.com)  
-[LinkedIn](https://linkedin.com/in/mohit-nagda) · [GitHub](https://github.com/mohitt38)
+[LinkedIn](https://www.linkedin.com/in/mohitnagda/) · [GitHub](https://github.com/mohitt38)
 
 ## License
 

@@ -1,3 +1,4 @@
+import { AnimatedBackground } from "./components/AnimatedBackground"
 import { CursorGlow } from "./components/CursorGlow"
 import { Footer } from "./components/Footer"
 import { Navbar } from "./components/Navbar"
@@ -24,7 +25,11 @@ export default function App() {
       >
         Skip to content
       </a>
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <AnimatedBackground />
+      </div>
       <CursorGlow />
+      <div className="relative z-10">
       <Navbar active={active} />
       <main id="content">
         <Hero active={active} />
@@ -38,6 +43,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      </div>
     </>
   )
 }

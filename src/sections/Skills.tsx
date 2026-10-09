@@ -9,7 +9,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="border-t border-white/10">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
+      <div className="shell py-24">
         <SectionHeading
           index="05"
           eyebrow="Skills"
@@ -17,8 +17,8 @@ export function Skills() {
           lede="The technologies from my resume and projects, grouped by the kind of work."
         />
         {current ? (
-          <div className="mt-12 grid gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-            <div className="flex gap-2 overflow-x-auto lg:flex-col lg:overflow-visible" role="tablist" aria-label="Skill groups">
+          <div className="mt-12 grid items-stretch gap-4 lg:grid-cols-[16rem_minmax(0,1fr)]">
+            <div className="grid grid-cols-2 border border-white/10 sm:grid-cols-3 lg:grid-cols-1" role="tablist" aria-label="Skill groups">
               {skillGroups.map((group) => {
                 const selected = group.id === active
                 return (
@@ -28,10 +28,8 @@ export function Skills() {
                     role="tab"
                     aria-selected={selected}
                     onClick={() => setActive(group.id)}
-                    className={`shrink-0 rounded-full border px-4 py-2 text-left font-display text-sm lg:rounded-none lg:border-0 lg:border-l lg:px-4 ${
-                      selected
-                        ? "border-blue bg-white/5 text-ivory lg:border-blue"
-                        : "border-white/10 text-mist hover:text-ivory lg:border-white/15"
+                    className={`border-b border-white/10 px-4 py-3 text-left font-display text-sm last:border-b-0 lg:border-r-0 ${
+                      selected ? "bg-white/5 text-ivory" : "text-mist hover:text-ivory"
                     }`}
                   >
                     {group.label}
@@ -39,8 +37,8 @@ export function Skills() {
                 )
               })}
             </div>
-            <Reveal key={current.id}>
-              <div className="min-h-56 border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+            <Reveal key={current.id} className="h-full">
+              <div className="flex h-full min-h-56 flex-col border border-white/10 bg-white/[0.03] p-6 sm:p-8">
                 <h3 className="font-display text-3xl tracking-tight text-ivory">{current.label}</h3>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-mist">{current.note}</p>
                 <ul className="mt-8 flex flex-wrap gap-2">

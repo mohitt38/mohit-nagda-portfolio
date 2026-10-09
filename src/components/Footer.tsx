@@ -3,7 +3,7 @@ import { contact } from "../config/contact"
 export function Footer() {
   return (
     <footer className="border-t border-white/10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-mist sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="shell flex flex-col gap-4 py-8 text-sm text-mist sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Mohit Nagda. Udaipur, Rajasthan.</p>
         <div className="flex flex-wrap gap-4">
           <a href="#education" className="hover:text-ivory">

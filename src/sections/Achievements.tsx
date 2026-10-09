@@ -5,14 +5,14 @@ import { credentials, volunteer } from "../data/achievements"
 export function Achievements() {
   return (
     <section id="achievements" className="border-t border-white/10">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
+      <div className="shell py-24">
         <SectionHeading
           index="07"
           eyebrow="Achievements"
           title="Papers, training, and one exhibition."
           lede="Research status stays qualified. Certifications are only the ones I have completed, plus RHCSA training with the exam still pending."
         />
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
+        <div className="mt-12 grid items-stretch gap-4 md:grid-cols-2">
           {credentials.map((item, index) => (
             <Reveal key={item.id} delay={index * 0.04} className="h-full">
               <article className="h-full border border-white/10 bg-white/[0.03] p-6">

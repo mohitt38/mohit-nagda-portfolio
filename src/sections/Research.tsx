@@ -5,7 +5,7 @@ import { research } from "../data/research"
 export function Research() {
   return (
     <section id="research" className="border-t border-white/10 bg-[#e7e1d6] text-[#161513]">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6">
+      <div className="shell py-24">
         <SectionHeading
           index="04"
           eyebrow="Research"

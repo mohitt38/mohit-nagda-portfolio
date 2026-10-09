@@ -26,6 +26,7 @@
     color: var(--color-ivory);
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   body::before {
@@ -59,6 +60,49 @@
   section[id] {
     scroll-margin-top: 5.75rem;
   }
+}
+
+@keyframes signal-trace {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  8% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+}
+
+.signal-trace {
+  stroke-dasharray: 0.16 0.84;
+  opacity: 0;
+  animation-name: signal-trace;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes node-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@utility shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
