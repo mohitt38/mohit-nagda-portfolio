@@ -1,6 +1,7 @@
 import { ProjectCard } from "../components/ProjectCard"
 import { SectionHeading } from "../components/SectionHeading"
 import { projects } from "../data/projects"
+import { GitHub } from "./GitHub"
 
 export function Projects() {
   return (
@@ -17,6 +18,7 @@ export function Projects() {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
+        <GitHub />
       </div>
     </section>
   )
