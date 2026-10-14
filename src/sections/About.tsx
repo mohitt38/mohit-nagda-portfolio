@@ -41,26 +41,41 @@ export function About() {
             </div>
           </Reveal>
         </div>
-        <Reveal delay={0.08}>
-          <aside className="border border-white/10 bg-white/[0.03] p-6 sm:p-7">
-            <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">Now</p>
-            <p className="mt-3 font-display text-2xl tracking-tight text-ivory">{education.standing}</p>
-            <p className="mt-3 text-sm leading-relaxed text-mist">
-              {education.degree}
-              <span className="mt-1 block">{education.focus}</span>
-              <span className="mt-1 block">{education.school}</span>
-              <span className="mt-3 block text-ivory">CGPA {education.cgpa}</span>
-            </p>
-            <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-6">
-              {interests.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-ivory">
-                  <span className="h-px w-4 shrink-0 bg-blue" aria-hidden="true" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </aside>
-        </Reveal>
+        <div className="space-y-5">
+          <Reveal delay={0.06}>
+            <figure className="overflow-hidden">
+              <img
+                src="/mohit-portrait.png"
+                alt="Illustrated portrait of Mohit Nagda at a desk with AI and Python books"
+                className="block h-auto w-full bg-transparent object-contain object-top"
+                width={819}
+                height={819}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <aside className="border border-white/10 bg-white/[0.03] p-6 sm:p-7">
+              <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">Now</p>
+              <p className="mt-3 font-display text-2xl tracking-tight text-ivory">{education.standing}</p>
+              <p className="mt-3 text-sm leading-relaxed text-mist">
+                {education.degree}
+                <span className="mt-1 block">{education.focus}</span>
+                <span className="mt-1 block">{education.school}</span>
+                <span className="mt-3 block text-ivory">CGPA {education.cgpa}</span>
+              </p>
+              <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-6">
+                {interests.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-ivory">
+                    <span className="h-px w-4 shrink-0 bg-blue" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </Reveal>
+        </div>
       </div>
       <ol className="mt-14 grid items-stretch gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
         {story.map((step, index) => (
