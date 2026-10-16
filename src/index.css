@@ -105,14 +105,29 @@
   padding-inline: 1.5rem;
 }
 
+@keyframes type-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.type-caret {
+  animation: type-caret 0.9s steps(1, end) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  *:not(.type-caret),
+  *:not(.type-caret)::before,
+  *:not(.type-caret)::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

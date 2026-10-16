@@ -1,0 +1,21 @@
+# Mohit Nagda
+
+> AI Engineer building real-world systems with Generative AI, LLMs, RAG, NLP, and Python.
+
+- Site: https://mohit-nagda.vercel.app/
+- GitHub: https://github.com/mohitt38
+- LinkedIn: https://www.linkedin.com/in/mohitnagda/
+- Email: nagdamohit19@gmail.com
+- Location: Udaipur, Rajasthan, India
+- Resume: https://mohit-nagda.vercel.app/Mohit-Nagda-Resume.pdf
+
+## Focus
+
+Generative AI, LLMs, RAG, LangChain, NLP, machine learning, Python backend, clinical NLP research.
+
+## Projects
+
+- AgriNova: multilingual agricultural RAG chatbot (Hindi, English, Punjabi)
+- Text Summarizer: extractive + abstractive summarization with BART / Flask
+- Meeting Task Management: offline speech-to-task pipeline
+- OCR Text Extractor: barcode-first parcel label OCR

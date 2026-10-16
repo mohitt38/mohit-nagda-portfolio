@@ -1,9 +1,10 @@
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, FileDown } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { contact } from "../config/contact"
 import { site } from "../config/site"
 import { MagneticButton } from "../components/MagneticButton"
 import { SystemMap } from "../components/SystemMap"
+import { Typewriter } from "../components/Typewriter"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -53,11 +54,23 @@ export function Hero({ active }: { active: string }) {
           <motion.p {...enter(0.28)} className="mt-1 font-display text-lg text-mist">
             {site.roles}
           </motion.p>
-          <motion.p {...enter(0.36)} className="mt-6 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
-            {site.statement}
-          </motion.p>
+          <motion.div {...enter(0.36)} className="mt-6 max-w-xl">
+            <p className="font-display text-[0.65rem] tracking-[0.2em] text-blue uppercase">
+              Available to connect
+            </p>
+            <p
+              className="mt-2 min-h-[4.75rem] font-display text-base leading-relaxed text-ivory sm:min-h-[4rem] sm:text-lg"
+              aria-live="polite"
+            >
+              <Typewriter phrases={site.typeLines} startDelay={350} />
+            </p>
+          </motion.div>
           <motion.div {...enter(0.46)} className="mt-8 flex flex-wrap gap-3">
             <MagneticButton href="#projects">View My Work</MagneticButton>
+            <MagneticButton href={site.resumePath} variant="ghost" download>
+              <FileDown className="h-4 w-4" aria-hidden="true" />
+              Resume
+            </MagneticButton>
             <MagneticButton href="#contact" variant="ghost">
               Let&apos;s Connect
             </MagneticButton>

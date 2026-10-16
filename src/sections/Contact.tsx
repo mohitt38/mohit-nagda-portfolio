@@ -2,7 +2,9 @@ import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react"
 import { MagneticButton } from "../components/MagneticButton"
 import { Reveal } from "../components/Reveal"
+import { Typewriter } from "../components/Typewriter"
 import { contact } from "../config/contact"
+import { site } from "../config/site"
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
@@ -25,9 +27,17 @@ export function Contact() {
           <h2 className="mt-4 max-w-4xl font-display text-5xl leading-[0.95] font-medium tracking-tight text-ivory sm:text-7xl">
             Let&apos;s build something intelligent.
           </h2>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
-            A note about a system, a paper, or a role is enough.
-          </p>
+          <div className="mt-6 max-w-xl">
+            <p className="font-display text-[0.65rem] tracking-[0.2em] text-blue uppercase">
+              Inbox open
+            </p>
+            <p
+              className="mt-2 min-h-[3.5rem] font-display text-lg leading-relaxed text-ivory sm:min-h-[3rem]"
+              aria-live="polite"
+            >
+              <Typewriter phrases={site.contactTypeLines} startDelay={200} />
+            </p>
+          </div>
         </Reveal>
         <div className="mt-10 flex flex-wrap gap-3">
           <MagneticButton href={contact.emailHref}>

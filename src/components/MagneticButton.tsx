@@ -7,6 +7,7 @@ type MagneticButtonProps = {
   children: ReactNode
   variant?: "solid" | "ghost"
   external?: boolean
+  download?: boolean | string
 }
 
 export function MagneticButton({
@@ -14,6 +15,7 @@ export function MagneticButton({
   children,
   variant = "solid",
   external = false,
+  download,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null)
   const reduce = useReducedMotion()
@@ -44,6 +46,9 @@ export function MagneticButton({
       }}
       className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 font-display text-sm tracking-wide transition-colors ${classes}`}
       {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+      {...(download
+        ? { download: typeof download === "string" ? download : true }
+        : {})}
     >
       {children}
     </motion.a>

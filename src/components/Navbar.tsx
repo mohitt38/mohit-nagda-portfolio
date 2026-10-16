@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import { contact } from "../config/contact"
-import { navItems } from "../config/site"
+import { navItems, site } from "../config/site"
 import { useScrolled } from "../hooks/useScrolled"
 import { SystemMap } from "./SystemMap"
 
@@ -52,14 +52,23 @@ export function Navbar({ active }: { active: string }) {
             </a>
           ))}
         </nav>
-        <a
-          href={contact.github}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="hidden font-display text-[0.78rem] tracking-wide text-blue lg:inline"
-        >
-          GitHub
-        </a>
+        <div className="hidden items-center gap-4 lg:flex">
+          <a
+            href={site.resumePath}
+            download
+            className="font-display text-[0.78rem] tracking-wide text-mist hover:text-ivory"
+          >
+            Resume
+          </a>
+          <a
+            href={contact.github}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-display text-[0.78rem] tracking-wide text-blue"
+          >
+            GitHub
+          </a>
+        </div>
         <button
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-ivory lg:hidden"
@@ -96,8 +105,11 @@ export function Navbar({ active }: { active: string }) {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex gap-4 border-t border-white/10 pt-5 text-sm">
-              <a href={contact.emailHref} className="text-blue">
+            <div className="mt-6 flex flex-wrap gap-4 border-t border-white/10 pt-5 text-sm">
+              <a href={site.resumePath} download className="text-blue">
+                Resume
+              </a>
+              <a href={contact.emailHref} className="text-mist">
                 Email
               </a>
               <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="text-mist">
