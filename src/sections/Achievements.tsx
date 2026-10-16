@@ -31,8 +31,8 @@ export function Achievements() {
           ))}
         </div>
         <Reveal>
-          <article className="mt-4 border border-white/10 p-6 sm:p-8">
-            <p className="font-display text-[0.72rem] tracking-[0.16em] text-violet uppercase">Volunteer</p>
+          <article className="mt-4 border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+            <p className="font-display text-[0.72rem] tracking-[0.16em] text-blue uppercase">Volunteer</p>
             <h3 className="mt-3 font-display text-2xl text-ivory">{volunteer.event}</h3>
             <p className="mt-2 text-sm text-mist">
               {volunteer.role} · {volunteer.org}
