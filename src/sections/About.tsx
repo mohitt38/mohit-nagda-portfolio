@@ -49,7 +49,7 @@ export function About() {
               />
             </figure>
 
-            <aside className="w-full border border-white/10 bg-white/[0.03] p-5 sm:p-6">
+            <aside className="w-full border border-line bg-surface p-5 sm:p-6">
               <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">Now</p>
               <p className="mt-2 font-display text-xl tracking-tight text-ivory">{education.standing}</p>
               <p className="mt-2 text-sm leading-relaxed text-mist">
@@ -63,7 +63,7 @@ export function About() {
         </Reveal>
       </div>
 
-      <ol className="mt-14 grid items-stretch gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+      <ol className="mt-14 grid items-stretch gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {story.map((step, index) => (
           <li key={step.id} className="flex h-full min-h-28 flex-col bg-ink px-5 py-5">
             <p className="font-display text-[0.68rem] tracking-[0.16em] text-blue">0{index + 1}</p>

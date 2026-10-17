@@ -4,7 +4,7 @@ import { research } from "../data/research"
 
 export function Research() {
   return (
-    <section id="research" className="border-t border-white/10 bg-[#e7e1d6] text-[#161513]">
+    <section id="research" className="border-t border-line bg-paper text-paper-ink">
       <div className="shell py-24">
         <SectionHeading
           index="04"

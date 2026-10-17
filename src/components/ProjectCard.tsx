@@ -16,14 +16,14 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       transition={{ duration: reduce ? 0 : 0.65, delay: reduce ? 0 : index * 0.06, ease: [0.22, 1, 0.36, 1] }}
       style={{ borderColor: `${project.accent}55` }}
       whileHover={reduce ? undefined : { y: -8 }}
-      className="group relative overflow-hidden border border-white/10 bg-panel/80 transition-shadow duration-300 hover:shadow-[0_22px_50px_rgba(0,0,0,0.35)]"
+      className="group relative overflow-hidden border border-line bg-panel/80 transition-shadow duration-300 hover:shadow-[0_22px_50px_rgba(0,0,0,0.35)]"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{ background: `linear-gradient(135deg, ${project.accent}22, transparent 42%)` }}
       />
-      <div className="grid items-stretch lg:grid-cols-2">
-        <div className="relative min-h-72 overflow-hidden border-b border-white/10 lg:min-h-full lg:border-r lg:border-b-0">
+      <div className="grid lg:grid-cols-2 lg:items-stretch">
+        <div className="relative min-h-72 self-stretch overflow-hidden border-b border-line bg-[#0c0e12] lg:min-h-0 lg:border-r lg:border-b-0">
           <ProjectVisual id={project.visual} accent={project.accent} />
         </div>
         <div className="relative flex flex-col p-6 sm:p-8">
@@ -33,7 +33,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           <p className="mt-3 text-sm leading-relaxed text-mist">{project.summary}</p>
           <ul className="mt-5 flex flex-wrap gap-2">
             {project.stack.map((item) => (
-              <li key={item} className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-mist">
+              <li key={item} className="rounded-full border border-line px-2.5 py-1 text-xs text-mist">
                 {item}
               </li>
             ))}
@@ -52,7 +52,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
               type="button"
               aria-expanded={open}
               onClick={() => setOpen((value) => !value)}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-4 text-sm text-ivory"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line-strong px-4 text-sm text-ivory"
             >
               {open ? "Hide the build" : "What I built"}
               <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
@@ -66,7 +66,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
                 exit={reduce ? undefined : { height: 0, opacity: 0 }}
                 className="overflow-hidden"
               >
-                <ul className="mt-5 space-y-2 border-t border-white/10 pt-4">
+                <ul className="mt-5 space-y-2 border-t border-line pt-4">
                   {project.built.map((point) => (
                     <li key={point} className="flex gap-3 text-sm leading-relaxed text-mist">
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-blue" aria-hidden="true" />

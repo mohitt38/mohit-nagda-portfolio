@@ -31,8 +31,8 @@ export function MagneticButton({
 
   const classes =
     variant === "solid"
-      ? "bg-ivory text-ink hover:bg-white"
-      : "border border-white/15 bg-white/[0.03] text-ivory hover:border-blue/50 hover:bg-white/[0.06]"
+      ? "bg-ivory text-ink hover:bg-lift"
+      : "border border-line-strong bg-surface text-ivory hover:border-blue/50 hover:bg-surface-2"
 
   return (
     <motion.a

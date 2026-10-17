@@ -5,7 +5,7 @@ import { GitHub } from "./GitHub"
 
 export function Projects() {
   return (
-    <section id="projects" className="border-t border-white/10">
+    <section id="projects" className="border-t border-line">
       <div className="shell py-24">
         <SectionHeading
           index="03"

@@ -20,7 +20,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-white/10">
+    <section id="contact" className="border-t border-line">
       <div className="shell py-24">
         <Reveal>
           <p className="font-display text-[0.72rem] tracking-[0.22em] text-blue uppercase">08 / Contact</p>
@@ -54,7 +54,7 @@ export function Contact() {
           </MagneticButton>
         </div>
         <ul className="mt-12 grid items-stretch gap-4 sm:grid-cols-2">
-          <li className="flex h-full flex-col border border-white/10 p-6">
+          <li className="flex h-full flex-col border border-line p-6">
             <p className="text-xs tracking-[0.16em] text-mist uppercase">Email</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
               <a href={contact.emailHref} className="font-display text-xl text-ivory">
@@ -65,7 +65,7 @@ export function Contact() {
               </button>
             </div>
           </li>
-          <li className="flex h-full flex-col border border-white/10 p-6">
+          <li className="flex h-full flex-col border border-line p-6">
             <p className="flex items-center gap-2 text-xs tracking-[0.16em] text-mist uppercase">
               <Phone className="h-3.5 w-3.5" aria-hidden="true" />
               Phone
@@ -74,19 +74,19 @@ export function Contact() {
               {contact.phoneDisplay}
             </a>
           </li>
-          <li className="flex h-full flex-col border border-white/10 p-6">
+          <li className="flex h-full flex-col border border-line p-6">
             <p className="text-xs tracking-[0.16em] text-mist uppercase">LinkedIn</p>
             <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="mt-2 block text-ivory">
               linkedin.com/in/mohitnagda
             </a>
           </li>
-          <li className="flex h-full flex-col border border-white/10 p-6">
+          <li className="flex h-full flex-col border border-line p-6">
             <p className="text-xs tracking-[0.16em] text-mist uppercase">GitHub</p>
             <a href={contact.github} target="_blank" rel="noreferrer noopener" className="mt-2 block text-ivory">
               github.com/mohitt38
             </a>
           </li>
-          <li className="flex h-full flex-col border border-white/10 p-6 sm:col-span-2">
+          <li className="flex h-full flex-col border border-line p-6 sm:col-span-2">
             <p className="flex items-center gap-2 text-xs tracking-[0.16em] text-mist uppercase">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
               Location
@@ -97,7 +97,7 @@ export function Contact() {
         <form
           action={`https://formsubmit.co/${contact.email}`}
           method="POST"
-          className="mt-8 border border-white/10 p-6 sm:p-8"
+          className="mt-8 border border-line p-6 sm:p-8"
         >
           <input type="hidden" name="_subject" value="New message from your portfolio" />
           <input type="hidden" name="_template" value="table" />
@@ -114,7 +114,7 @@ export function Contact() {
                 required
                 name="name"
                 autoComplete="name"
-                className="mt-2 w-full border border-white/15 bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
+                className="mt-2 w-full border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
               />
             </label>
             <label className="block text-sm text-mist">
@@ -124,7 +124,7 @@ export function Contact() {
                 type="email"
                 name="email"
                 autoComplete="email"
-                className="mt-2 w-full border border-white/15 bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
+                className="mt-2 w-full border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
               />
             </label>
             <label className="block text-sm text-mist sm:col-span-2">
@@ -134,7 +134,7 @@ export function Contact() {
                 type="tel"
                 name="phone"
                 autoComplete="tel"
-                className="mt-2 w-full border border-white/15 bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
+                className="mt-2 w-full border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
               />
             </label>
             <label className="block text-sm text-mist sm:col-span-2">
@@ -143,7 +143,7 @@ export function Contact() {
                 required
                 name="message"
                 rows={5}
-                className="mt-2 w-full resize-y border border-white/15 bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
+                className="mt-2 w-full resize-y border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
               />
             </label>
           </div>

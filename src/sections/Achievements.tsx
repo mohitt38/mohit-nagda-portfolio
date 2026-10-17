@@ -4,7 +4,7 @@ import { credentials, volunteer } from "../data/achievements"
 
 export function Achievements() {
   return (
-    <section id="achievements" className="border-t border-white/10">
+    <section id="achievements" className="border-t border-line">
       <div className="shell py-24">
         <SectionHeading
           index="07"
@@ -15,11 +15,11 @@ export function Achievements() {
         <div className="mt-12 grid items-stretch gap-4 md:grid-cols-2">
           {credentials.map((item, index) => (
             <Reveal key={item.id} delay={index * 0.04} className="h-full">
-              <article className="h-full border border-white/10 bg-white/[0.03] p-6">
+              <article className="h-full border border-line bg-surface p-6">
                 <div className="flex items-start justify-between gap-4">
                   <p className="font-display text-[0.72rem] tracking-[0.16em] text-blue uppercase">{item.kind}</p>
                   {item.status ? (
-                    <span className="shrink-0 rounded-full border border-white/15 px-2 py-1 text-[0.68rem] text-mist">
+                    <span className="shrink-0 rounded-full border border-line-strong px-2 py-1 text-[0.68rem] text-mist">
                       {item.status}
                     </span>
                   ) : null}
@@ -31,7 +31,7 @@ export function Achievements() {
           ))}
         </div>
         <Reveal>
-          <article className="mt-4 border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+          <article className="mt-4 border border-line bg-surface p-6 sm:p-8">
             <p className="font-display text-[0.72rem] tracking-[0.16em] text-blue uppercase">Volunteer</p>
             <h3 className="mt-3 font-display text-2xl text-ivory">{volunteer.event}</h3>
             <p className="mt-2 text-sm text-mist">

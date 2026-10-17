@@ -11,7 +11,7 @@ export function SystemMap({ activeSection, variant = "hero" }: SystemMapProps) {
 
   if (variant === "rail") {
     return (
-      <nav className="hidden border-t border-white/10 xl:block" aria-label="Journey map">
+      <nav className="hidden border-t border-line xl:block" aria-label="Journey map">
         <ol className="shell flex items-center gap-1 py-2">
           {journeyNodes.map((node, index) => {
             const on = lit.has(node.id)
@@ -25,13 +25,13 @@ export function SystemMap({ activeSection, variant = "hero" }: SystemMapProps) {
                 >
                   <span
                     className={`mr-1.5 inline-block h-1.5 w-1.5 rounded-full align-middle ${
-                      on ? "bg-blue shadow-[0_0_10px_rgba(142,182,255,0.8)]" : "bg-white/20"
+                      on ? "bg-blue shadow-[0_0_10px_rgba(142,182,255,0.8)]" : "bg-mist/30"
                     }`}
                   />
                   {node.short}
                 </a>
                 {index < journeyNodes.length - 1 ? (
-                  <span className={`h-px flex-1 ${on ? "bg-blue/50" : "bg-white/10"}`} />
+                  <span className={`h-px flex-1 ${on ? "bg-blue/50" : "bg-line"}`} />
                 ) : null}
               </li>
             )
@@ -58,7 +58,7 @@ export function SystemMap({ activeSection, variant = "hero" }: SystemMapProps) {
                 y1={a.y}
                 x2={b.x}
                 y2={b.y}
-                stroke={active ? "#8eb6ff" : partial ? "rgba(142,182,255,0.35)" : "rgba(232,236,244,0.12)"}
+                stroke={active ? "var(--blue)" : partial ? "color-mix(in oklab, var(--blue) 35%, transparent)" : "var(--line)"}
                 strokeWidth={active ? 0.45 : 0.28}
                 vectorEffect="non-scaling-stroke"
               />
@@ -69,7 +69,7 @@ export function SystemMap({ activeSection, variant = "hero" }: SystemMapProps) {
                 x2={b.x}
                 y2={b.y}
                 pathLength={1}
-                stroke="#8eb6ff"
+                stroke="var(--blue)"
                 strokeWidth={0.7}
                 strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
@@ -92,12 +92,12 @@ export function SystemMap({ activeSection, variant = "hero" }: SystemMapProps) {
             style={{ left: `${node.x}%`, top: `${node.y}%` }}
           >
             <span
-              className="flex items-center gap-2 rounded-full border border-white/10 bg-ink/80 px-3 py-1.5 backdrop-blur-sm motion-safe:animate-[node-float_5.5s_ease-in-out_infinite]"
+              className="flex items-center gap-2 rounded-full border border-line bg-ink/80 px-3 py-1.5 backdrop-blur-sm motion-safe:animate-[node-float_5.5s_ease-in-out_infinite]"
               style={{ animationDelay: `${index * 0.35}s` }}
             >
               <span
                 className={`h-2 w-2 rounded-full ${
-                  on ? "bg-blue shadow-[0_0_12px_rgba(142,182,255,0.95)]" : "bg-white/25"
+                  on ? "bg-blue shadow-[0_0_12px_rgba(142,182,255,0.95)]" : "bg-mist/35"
                 }`}
               />
               <span className={`font-display text-xs tracking-wide whitespace-nowrap ${on ? "text-ivory" : "text-mist"}`}>

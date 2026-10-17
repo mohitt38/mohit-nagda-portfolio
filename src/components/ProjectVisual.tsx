@@ -13,7 +13,7 @@ function Frame({
   children: ReactNode
 }) {
   return (
-    <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid meet" className="absolute inset-0 h-full w-full" role="img" aria-label={label}>
+    <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full" role="img" aria-label={label}>
       <defs>
         <pattern id={`${id}-grid`} width="28" height="28" patternUnits="userSpaceOnUse">
           <path d="M28 0 H0 V28" fill="none" stroke="#e8ecf4" strokeOpacity="0.045" />

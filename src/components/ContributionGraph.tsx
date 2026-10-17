@@ -9,7 +9,7 @@ import {
 import { contact } from "../config/contact"
 
 const LEVEL_CLASS = [
-  "bg-white/[0.06]",
+  "bg-surface-2",
   "bg-blue/25",
   "bg-blue/45",
   "bg-blue/70",
@@ -96,7 +96,7 @@ export function ContributionGraph() {
   const columns = `2rem repeat(${Math.max(weeks.length, 1)}, minmax(0, 1fr))`
 
   return (
-    <div className="border border-white/10 bg-white/[0.02] p-5 sm:p-7">
+    <div className="border border-line bg-surface p-5 sm:p-7">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">
@@ -127,12 +127,12 @@ export function ContributionGraph() {
       ) : null}
 
       {!error && !summary ? (
-        <div className="mt-8 h-28 animate-pulse bg-white/[0.04]" aria-hidden="true" />
+        <div className="mt-8 h-28 animate-pulse bg-surface" aria-hidden="true" />
       ) : null}
 
       {summary ? (
         <>
-          <div className="mt-8 grid w-full grid-cols-3 gap-4 border-b border-white/10 pb-6">
+          <div className="mt-8 grid w-full grid-cols-3 gap-4 border-b border-line pb-6">
             <Stat label="Contributions" value={summary.total.toLocaleString()} />
             <div className="justify-self-center text-center">
               <Stat label="Current streak" value={`${summary.currentStreak}d`} />

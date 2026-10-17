@@ -5,6 +5,7 @@ import { contact } from "../config/contact"
 import { navItems, site } from "../config/site"
 import { useScrolled } from "../hooks/useScrolled"
 import { SystemMap } from "./SystemMap"
+import { ThemeToggle } from "./ThemeToggle"
 
 export function Navbar({ active }: { active: string }) {
   const scrolled = useScrolled(24)
@@ -31,10 +32,10 @@ export function Navbar({ active }: { active: string }) {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-          scrolled || open ? "border-b border-white/10 bg-ink/90 backdrop-blur-md" : "bg-transparent"
+          scrolled || open ? "border-b border-line bg-ink/90 backdrop-blur-md" : "bg-transparent"
         }`}
       >
-      <div className="shell flex h-16 items-center justify-between">
+      <div className="shell flex h-16 items-center justify-between gap-3">
         <a href="#home" className="font-display text-sm tracking-[0.18em] text-ivory uppercase">
           Mohit Nagda
         </a>
@@ -52,33 +53,36 @@ export function Navbar({ active }: { active: string }) {
             </a>
           ))}
         </nav>
-        <div className="hidden items-center gap-4 lg:flex">
-          <a
-            href={site.resumePath}
-            download
-            className="font-display text-[0.78rem] tracking-wide text-mist hover:text-ivory"
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="hidden items-center gap-4 lg:flex">
+            <a
+              href={site.resumePath}
+              download
+              className="font-display text-[0.78rem] tracking-wide text-mist hover:text-ivory"
+            >
+              Resume
+            </a>
+            <a
+              href={contact.github}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="font-display text-[0.78rem] tracking-wide text-blue"
+            >
+              GitHub
+            </a>
+          </div>
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line-strong text-ivory lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((value) => !value)}
           >
-            Resume
-          </a>
-          <a
-            href={contact.github}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="font-display text-[0.78rem] tracking-wide text-blue"
-          >
-            GitHub
-          </a>
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-ivory lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </div>
         {scrolled ? <SystemMap activeSection={active} variant="rail" /> : null}
       </header>
@@ -105,7 +109,7 @@ export function Navbar({ active }: { active: string }) {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex flex-wrap gap-4 border-t border-white/10 pt-5 text-sm">
+            <div className="mt-6 flex flex-wrap gap-4 border-t border-line pt-5 text-sm">
               <a href={site.resumePath} download className="text-blue">
                 Resume
               </a>

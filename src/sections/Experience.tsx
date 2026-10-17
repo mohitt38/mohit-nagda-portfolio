@@ -6,7 +6,7 @@ export function Experience() {
   const reduce = useReducedMotion()
 
   return (
-    <section id="experience" className="border-t border-white/10">
+    <section id="experience" className="border-t border-line">
       <div className="shell py-24">
         <SectionHeading
           index="02"
@@ -14,7 +14,7 @@ export function Experience() {
           title="Learning, then building."
           lede="Three roles so far. The through-line is the same: take a real problem, work it in Python or in a research setting, and leave something that can be evaluated."
         />
-        <ol className="relative mt-16 space-y-12 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-white/15">
+        <ol className="relative mt-16 space-y-12 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-line-strong">
           {experience.map((item, index) => (
             <motion.li
               key={item.id}
@@ -41,7 +41,7 @@ export function Experience() {
               <h3 className="mt-2 font-display text-2xl tracking-tight text-ivory sm:text-3xl">{item.role}</h3>
               <p className="mt-1 text-mist">
                 {item.org}
-                <span className="px-2 text-white/25">/</span>
+                <span className="px-2 text-mist/40">/</span>
                 {item.place}
               </p>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-ivory/90">{item.summary}</p>

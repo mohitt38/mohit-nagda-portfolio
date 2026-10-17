@@ -15,9 +15,9 @@ export function SectionHeading({
   lede,
   tone = "dark",
 }: SectionHeadingProps) {
-  const kicker = tone === "paper" ? "text-[#3d4f73]" : "text-blue"
-  const heading = tone === "paper" ? "text-[#161513]" : "text-ivory"
-  const body = tone === "paper" ? "text-[#3f3c36]" : "text-mist"
+  const kicker = tone === "paper" ? "text-paper-kicker" : "text-blue"
+  const heading = tone === "paper" ? "text-paper-ink" : "text-ivory"
+  const body = tone === "paper" ? "text-paper-mist" : "text-mist"
 
   return (
     <Reveal>

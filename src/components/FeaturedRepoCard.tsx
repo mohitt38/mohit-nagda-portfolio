@@ -19,7 +19,7 @@ export function FeaturedRepoCard({ repo, index }: { repo: FeaturedRepo; index: n
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={reduce ? undefined : { y: -4 }}
-      className="group flex h-full flex-col border border-white/10 bg-white/[0.02] p-5 transition-colors hover:border-blue/40 hover:bg-white/[0.04]"
+      className="group flex h-full flex-col border border-line bg-surface p-5 transition-colors hover:border-blue/40 hover:bg-surface"
     >
       <div className="flex items-start justify-between gap-3">
         <p className="font-display text-lg tracking-tight text-ivory group-hover:text-blue">

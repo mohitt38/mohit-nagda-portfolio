@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import { useTheme } from "../theme/ThemeProvider"
 
 type Particle = {
   x: number
@@ -7,8 +8,24 @@ type Particle = {
   vy: number
 }
 
+const PALETTE = {
+  dark: {
+    link: "rgba(142, 182, 255, 0.16)",
+    particle: "rgba(232, 236, 244, 0.72)",
+    hot: "rgba(183, 166, 255, 0.95)",
+    pointer: "rgba(183, 166, 255, 0.28)",
+  },
+  light: {
+    link: "rgba(61, 111, 217, 0.18)",
+    particle: "rgba(61, 111, 217, 0.35)",
+    hot: "rgba(91, 82, 176, 0.75)",
+    pointer: "rgba(61, 111, 217, 0.22)",
+  },
+} as const
+
 export function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -17,6 +34,7 @@ export function AnimatedBackground() {
     if (!context) return
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const colors = PALETTE[theme]
     const particles: Particle[] = []
     let frame = 0
     let width = 0
@@ -36,7 +54,7 @@ export function AnimatedBackground() {
 
     const seed = () => {
       particles.length = 0
-      const count = width < 720 ? 22 : 42
+      const count = width < 720 ? 28 : 52
       for (let i = 0; i < count; i += 1) {
         particles.push({
           x: Math.random() * width,
@@ -59,29 +77,33 @@ export function AnimatedBackground() {
           const dy = a.y - b.y
           const dist = Math.hypot(dx, dy)
           if (dist < 150) {
-            context.strokeStyle = `rgba(142, 182, 255, ${0.16 * (1 - dist / 150)})`
+            context.strokeStyle = colors.link
+            context.globalAlpha = 1 - dist / 150
             context.lineWidth = 1
             context.beginPath()
             context.moveTo(a.x, a.y)
             context.lineTo(b.x, b.y)
             context.stroke()
+            context.globalAlpha = 1
           }
         }
       }
 
-      particles.forEach((particle) => {
-        const dist = Math.hypot(particle.x - pointer.x, particle.y - pointer.y)
+      particles.forEach((p) => {
+        const dist = Math.hypot(p.x - pointer.x, p.y - pointer.y)
         const near = dist < 180
         if (near && pointer.x > -1000) {
-          context.strokeStyle = `rgba(183, 166, 255, ${0.28 * (1 - dist / 180)})`
+          context.strokeStyle = colors.pointer
+          context.globalAlpha = 1 - dist / 180
           context.beginPath()
-          context.moveTo(particle.x, particle.y)
+          context.moveTo(p.x, p.y)
           context.lineTo(pointer.x, pointer.y)
           context.stroke()
+          context.globalAlpha = 1
         }
-        context.fillStyle = near ? "rgba(183, 166, 255, 0.95)" : "rgba(232, 236, 244, 0.72)"
+        context.fillStyle = near ? colors.hot : colors.particle
         context.beginPath()
-        context.arc(particle.x, particle.y, near ? 2.4 : 1.4, 0, Math.PI * 2)
+        context.arc(p.x, p.y, near ? 2.4 : 1.4, 0, Math.PI * 2)
         context.fill()
       })
     }
@@ -128,6 +150,12 @@ export function AnimatedBackground() {
       pointer.x = -9999
       pointer.y = -9999
     }
+    const onVisibility = () => {
+      if (!document.hidden && !reduce) {
+        window.cancelAnimationFrame(frame)
+        frame = window.requestAnimationFrame(step)
+      }
+    }
 
     resize()
     seed()
@@ -140,6 +168,7 @@ export function AnimatedBackground() {
     }
     window.addEventListener("resize", onResize)
     window.visualViewport?.addEventListener("resize", onResize)
+    document.addEventListener("visibilitychange", onVisibility)
     if (finePointer) {
       window.addEventListener("pointermove", onPointer, { passive: true })
       window.addEventListener("pointerleave", onLeave)
@@ -149,10 +178,11 @@ export function AnimatedBackground() {
       window.cancelAnimationFrame(frame)
       window.removeEventListener("resize", onResize)
       window.visualViewport?.removeEventListener("resize", onResize)
+      document.removeEventListener("visibilitychange", onVisibility)
       window.removeEventListener("pointermove", onPointer)
       window.removeEventListener("pointerleave", onLeave)
     }
-  }, [])
+  }, [theme])
 
   return <canvas ref={canvasRef} className="block h-full w-full" aria-hidden="true" />
 }
