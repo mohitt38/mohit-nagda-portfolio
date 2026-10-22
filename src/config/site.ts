@@ -25,6 +25,9 @@ export const site = {
   ogImage: "/mohit-portrait.png",
   keywords: [
     "Mohit Nagda",
+    "Mohit Nagda portfolio",
+    "Mohit Nagda AI Engineer",
+    "Mohit Nagda Udaipur",
     "AI Engineer",
     "Generative AI Engineer",
     "LLM Engineer",
@@ -44,6 +47,7 @@ export const site = {
     "AI engineer India",
     "Multilingual RAG",
     "OCR computer vision Python",
+    "AgriNova",
   ],
 } as const
 

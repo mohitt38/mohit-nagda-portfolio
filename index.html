@@ -30,13 +30,17 @@
     />
     <meta
       name="keywords"
-      content="Mohit Nagda, AI Engineer, Generative AI Engineer, LLM Engineer, RAG developer, LangChain developer, NLP engineer, Python AI developer, Machine Learning Engineer, Generative AI portfolio, RAG chatbot, Clinical NLP, Hugging Face, Streamlit AI projects, AI research intern, Python backend developer, AI engineer Udaipur, AI engineer India, Multilingual RAG, OCR computer vision Python"
+      content="Mohit Nagda, Mohit Nagda portfolio, Mohit Nagda AI Engineer, Mohit Nagda Udaipur, AI Engineer, Generative AI Engineer, LLM Engineer, RAG developer, LangChain developer, NLP engineer, Python AI developer, Machine Learning Engineer, Generative AI portfolio, AgriNova, Clinical NLP, Hugging Face, Streamlit AI projects, AI research intern, AI engineer India"
     />
     <meta name="author" content="Mohit Nagda" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="creator" content="Mohit Nagda" />
+    <meta name="publisher" content="Mohit Nagda" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="bingbot" content="index, follow" />
     <link rel="canonical" href="https://mohit-nagda.vercel.app/" />
-    <meta property="og:type" content="website" />
+    <link rel="alternate" href="https://mohit-nagda-portfolio.vercel.app/" />
+    <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Mohit Nagda" />
     <meta property="og:url" content="https://mohit-nagda.vercel.app/" />
     <meta property="og:title" content="Mohit Nagda | AI Engineer — Generative AI, RAG &amp; Python" />
@@ -45,8 +49,12 @@
       content="Final-year AI-focused CS student building Generative AI, LLM, RAG, and NLP systems in Python. Portfolio of real projects from Udaipur, India."
     />
     <meta property="og:image" content="https://mohit-nagda.vercel.app/mohit-portrait.png" />
+    <meta property="og:image:secure_url" content="https://mohit-nagda.vercel.app/mohit-portrait.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content="Illustrated portrait of Mohit Nagda, AI Engineer" />
     <meta property="og:locale" content="en_IN" />
+    <meta property="profile:first_name" content="Mohit" />
+    <meta property="profile:last_name" content="Nagda" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Mohit Nagda | AI Engineer — Generative AI, RAG &amp; Python" />
     <meta
@@ -54,6 +62,8 @@
       content="Building real-world AI systems across Generative AI, LLMs, RAG, NLP and Python backend development."
     />
     <meta name="twitter:image" content="https://mohit-nagda.vercel.app/mohit-portrait.png" />
+    <meta name="twitter:image:alt" content="Illustrated portrait of Mohit Nagda, AI Engineer" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -69,14 +79,27 @@
             "@id": "https://mohit-nagda.vercel.app/#website",
             "url": "https://mohit-nagda.vercel.app/",
             "name": "Mohit Nagda | AI Engineer",
+            "alternateName": ["Mohit Nagda Portfolio", "Mohit Nagda AI Engineer"],
             "description": "Portfolio of Mohit Nagda — AI Engineer building Generative AI, RAG, LLM, and NLP systems in Python.",
             "inLanguage": "en-IN",
             "publisher": { "@id": "https://mohit-nagda.vercel.app/#person" }
           },
           {
+            "@type": "ProfilePage",
+            "@id": "https://mohit-nagda.vercel.app/#profilepage",
+            "url": "https://mohit-nagda.vercel.app/",
+            "name": "Mohit Nagda | AI Engineer — Generative AI, RAG & Python",
+            "isPartOf": { "@id": "https://mohit-nagda.vercel.app/#website" },
+            "about": { "@id": "https://mohit-nagda.vercel.app/#person" },
+            "mainEntity": { "@id": "https://mohit-nagda.vercel.app/#person" },
+            "inLanguage": "en-IN"
+          },
+          {
             "@type": "Person",
             "@id": "https://mohit-nagda.vercel.app/#person",
             "name": "Mohit Nagda",
+            "givenName": "Mohit",
+            "familyName": "Nagda",
             "url": "https://mohit-nagda.vercel.app/",
             "image": "https://mohit-nagda.vercel.app/mohit-portrait.png",
             "jobTitle": "AI Engineer",
@@ -106,7 +129,39 @@
             ],
             "sameAs": [
               "https://github.com/mohitt38",
-              "https://www.linkedin.com/in/mohitnagda/"
+              "https://www.linkedin.com/in/mohitnagda/",
+              "https://mohit-nagda-portfolio.vercel.app/"
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://mohit-nagda.vercel.app/#projects",
+            "name": "Featured AI Projects by Mohit Nagda",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "AgriNova",
+                "description": "Multilingual agricultural RAG chatbot in Hindi, English, and Punjabi."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Text Summarizer",
+                "description": "Extractive and abstractive summarization with Hugging Face BART and Flask."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Meeting Task Management",
+                "description": "Offline speech-to-task pipeline for meeting notes."
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "OCR Text Extractor",
+                "description": "Barcode-first parcel label OCR with EasyOCR and Streamlit."
+              }
             ]
           }
         ]
@@ -115,6 +170,29 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <main style="max-width: 42rem; margin: 2rem auto; padding: 0 1.5rem; font-family: system-ui, sans-serif; line-height: 1.6">
+        <h1>Mohit Nagda — AI Engineer</h1>
+        <p>
+          Final-year AI-focused computer science student in Udaipur, India. Building real systems with
+          Generative AI, LLMs, RAG, NLP, and Python.
+        </p>
+        <h2>Projects</h2>
+        <ul>
+          <li>AgriNova — multilingual agricultural RAG chatbot (Hindi, English, Punjabi)</li>
+          <li>Text Summarizer — extractive + abstractive summarization with BART / Flask</li>
+          <li>Meeting Task Management — offline speech-to-task pipeline</li>
+          <li>OCR Text Extractor — barcode-first parcel label OCR</li>
+        </ul>
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:nagdamohit19@gmail.com">nagdamohit19@gmail.com</a><br />
+          GitHub: <a href="https://github.com/mohitt38">github.com/mohitt38</a><br />
+          LinkedIn: <a href="https://www.linkedin.com/in/mohitnagda/">linkedin.com/in/mohitnagda</a><br />
+          Portfolio: <a href="https://mohit-nagda.vercel.app/">mohit-nagda.vercel.app</a>
+        </p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

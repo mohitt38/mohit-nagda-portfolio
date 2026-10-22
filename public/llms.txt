@@ -3,6 +3,7 @@
 > AI Engineer building real-world systems with Generative AI, LLMs, RAG, NLP, and Python.
 
 - Site: https://mohit-nagda.vercel.app/
+- Alternate: https://mohit-nagda-portfolio.vercel.app/
 - GitHub: https://github.com/mohitt38
 - LinkedIn: https://www.linkedin.com/in/mohitnagda/
 - Email: nagdamohit19@gmail.com
