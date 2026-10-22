@@ -1,23 +1,4 @@
 User-agent: *
 Allow: /
 
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
 Sitemap: https://mohit-nagda.vercel.app/sitemap.xml
-Sitemap: https://mohit-nagda-portfolio.vercel.app/sitemap.xml
