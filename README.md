@@ -1,6 +1,12 @@
 # Mohit Nagda — Portfolio
 
+**Live site: https://mohit-nagda.vercel.app**
+
 Personal portfolio for Mohit Nagda, a final-year B.Tech Computer Science (Artificial Intelligence) student building practical AI systems across generative AI, language models, NLP, research, and Python backend development.
+
+- Live site: https://mohit-nagda.vercel.app
+- LinkedIn: https://www.linkedin.com/in/mohitnagda/
+- GitHub: https://github.com/mohitt38
 
 ## Tech stack
 
