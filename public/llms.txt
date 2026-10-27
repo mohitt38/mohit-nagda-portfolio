@@ -26,5 +26,4 @@ Mohit Nagda is a final-year B.Tech Computer Science student (AI specialization) 
 
 ## Optional
 
-- [Alternate portfolio URL](https://mohit-nagda-portfolio.vercel.app/): Same site, secondary domain
 - [Sitemap](https://mohit-nagda.vercel.app/sitemap.xml): Indexable URLs
