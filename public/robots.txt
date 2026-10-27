@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Agent-readable profile (GEO / llms.txt)
+# https://mohit-nagda.vercel.app/llms.txt
+# https://mohit-nagda.vercel.app/profile.md
+
 Sitemap: https://mohit-nagda.vercel.app/sitemap.xml

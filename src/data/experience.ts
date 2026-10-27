@@ -15,7 +15,7 @@ export const experience: ExperienceItem[] = [
     role: "Python Developer Intern",
     org: "Toba Tech Solutions",
     place: "Udaipur",
-    dates: "July 2026 – Present",
+    dates: "July 2026 - Present",
     current: true,
     summary:
       "Working on the Python backend for ContentX, and on AI generation workflows that move from a script to finished content.",
@@ -31,7 +31,7 @@ export const experience: ExperienceItem[] = [
     role: "AI Research Intern",
     org: "Tech Adaptive Pandit Pty Ltd",
     place: "Australia · Remote",
-    dates: "December 2025 – June 2026",
+    dates: "December 2025 - June 2026",
     summary:
       "Applied LLM research for clinical healthcare systems, centered on SOAP note generation and diagnostic reasoning.",
     points: [
@@ -46,7 +46,7 @@ export const experience: ExperienceItem[] = [
     role: "AI/ML Trainee",
     org: "Grass Solutions Pvt. Ltd.",
     place: "Udaipur",
-    dates: "June 2025 – July 2025",
+    dates: "June 2025 - July 2025",
     summary:
       "Built end-to-end machine learning pipelines across business use cases, from raw data through evaluation.",
     points: [

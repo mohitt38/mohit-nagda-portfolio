@@ -5,7 +5,11 @@ export type ProjectVisualId = "agri" | "summary" | "meeting" | "ocr"
 export type Project = {
   id: string
   name: string
+  /** Plain-language subtitle for non-tech readers */
+  plainName: string
   category: string
+  /** One-line outcome: before -> after */
+  outcome: string
   problem: string
   summary: string
   built: string[]
@@ -19,34 +23,38 @@ export const projects: Project[] = [
   {
     id: "agrinova",
     name: "AgriNova",
+    plainName: "Farming advice chatbot",
     category: "Agriculture · Generative AI",
+    outcome: "Crop questions in Hindi, English, or Punjabi → grounded answers farmers can use",
     problem:
-      "Farmers need crop advice that stays tied to real knowledge, in the language they actually use.",
+      "Farmers need crop advice that stays accurate and available in the language they actually use.",
     summary:
-      "An agricultural advisory chatbot that uses retrieval-augmented generation to answer in Hindi, English, and Punjabi.",
+      "A farming chatbot that answers questions in Hindi, English, and Punjabi. It looks up real knowledge first so answers stay useful - not just guessed.",
     built: [
-      "Architected a RAG flow for real-time, context-aware crop advisory.",
-      "Used LangChain prompt templates for multilingual responses.",
-      "Grounded model outputs in structured external knowledge through vector retrieval.",
-      "Built an interactive Streamlit interface.",
+      "Built a retrieval flow so advice stays tied to real crop knowledge.",
+      "Supported multilingual replies with careful prompt design.",
+      "Connected model answers to stored knowledge instead of free guessing.",
+      "Shipped a simple chat interface people can try.",
     ],
     stack: ["LLM", "RAG", "LangChain", "Gemini API", "Streamlit"],
     github: projectLinks.agrinova,
     visual: "agri",
-    accent: "#9dC7a8",
+    accent: "#9dc7a8",
   },
   {
     id: "summarizer",
     name: "Text Summarizer",
+    plainName: "Long reports → short summaries",
     category: "NLP · Generative AI",
+    outcome: "Long documents → clear short summaries in seconds",
     problem: "Long documents take too long to read when only the substance is needed.",
     summary:
-      "A dual-mode extractive and abstractive summarizer. Hugging Face BART handles the abstractive path, exposed through a Flask API. It reduced document reading time by about 70%.",
+      "Paste a long article or report and get a short, readable summary. Built to cut reading time by about 70% on long text.",
     built: [
-      "Built extractive and abstractive summarization in one application.",
-      "Used Hugging Face BART for abstractive summaries.",
-      "Processed text with NLTK and spaCy.",
-      "Served the pipeline through a Flask-based API.",
+      "Combined quick highlights with fuller AI summaries in one tool.",
+      "Used a strong summarization model for clear short text.",
+      "Cleaned and prepared text before summarization.",
+      "Exposed it through a simple web API.",
     ],
     stack: ["BART", "Hugging Face", "Flask", "NLTK", "spaCy"],
     github: projectLinks.summarizer,
@@ -56,15 +64,17 @@ export const projects: Project[] = [
   {
     id: "meeting",
     name: "Meeting Task Management",
+    plainName: "Meeting notes → action list",
     category: "NLP · Speech",
+    outcome: "Meeting audio → owners, deadlines, and priorities",
     problem: "Action items disappear inside unstructured meeting audio.",
     summary:
-      "An offline pipeline that turns meeting audio into structured tasks, then scores and assigns them.",
+      "Upload meeting audio and get a clear task list - who should do what, by when, and what matters most.",
     built: [
-      "Converted speech to text and extracted tasks with NLP.",
-      "Kept the pipeline fully offline.",
-      "Added priority scoring so tasks can be ranked by urgency.",
-      "Added assignment logic for relevant stakeholders, with a Streamlit UI.",
+      "Turned speech into text, then pulled out action items.",
+      "Kept the whole flow offline for private meetings.",
+      "Ranked tasks by urgency so the important ones surface first.",
+      "Added simple assignment logic and a clean results screen.",
     ],
     stack: ["Python", "NLP", "Speech Processing", "Streamlit"],
     github: projectLinks.meeting,
@@ -74,16 +84,18 @@ export const projects: Project[] = [
   {
     id: "ocr",
     name: "OCR Text Extractor",
+    plainName: "Parcel labels → readable text",
     category: "Computer Vision · OCR",
+    outcome: "Messy label photos → barcode / waybill text you can use",
     problem:
       "Parcel and shipping labels are often photographed in poor light, at an angle, or with damaged print.",
     summary:
-      "A barcode-first OCR pipeline for parcel and label images, with OCR as a fallback when the barcode path is not enough.",
+      "Point it at a parcel label photo and pull out the important text. It tries the barcode first, then falls back to OCR when needed.",
     built: [
-      "Extracted structured text from parcel label images in low-quality conditions.",
-      "Designed barcode-first detection so standard shipping labels stay fast.",
-      "Used OCR as a fallback for edge cases.",
-      "Wrapped the pipeline in a Streamlit interface.",
+      "Pulled structured text from hard-to-read label photos.",
+      "Used barcode reading first so common shipping labels stay fast.",
+      "Fell back to OCR when the barcode path was not enough.",
+      "Wrapped it in a simple upload-and-read interface.",
     ],
     stack: ["OpenCV", "Tesseract", "Python", "Streamlit"],
     github: projectLinks.ocr,

@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileDown } from "lucide-react"
+import { ArrowUpRight, FileDown, MessageCircle } from "lucide-react"
 import { motion, useReducedMotion } from "framer-motion"
 import { contact } from "../config/contact"
 import { site } from "../config/site"
@@ -22,12 +22,12 @@ export function Hero({ active }: { active: string }) {
 
   return (
     <section id="home" className="relative pt-20">
-      <div className="shell relative grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:py-20">
+      <div className="shell relative grid items-start gap-6 py-8 pb-4 sm:gap-10 sm:py-14 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-12 lg:py-20">
         <div>
           <motion.p {...enter(0.05)} className="font-display text-[0.72rem] tracking-[0.24em] text-blue uppercase">
-            Udaipur · Final-year B.Tech (AI)
+            Udaipur · Open to work · Building with AI
           </motion.p>
-          <h1 className="mt-5 font-display text-[clamp(3.4rem,9vw,7.2rem)] leading-none font-medium tracking-[-0.045em] text-ivory">
+          <h1 className="mt-4 font-display text-[clamp(2.75rem,11vw,7.2rem)] leading-none font-medium tracking-[-0.045em] text-ivory sm:mt-5">
             {["Mohit", "Nagda"].map((word, index) => (
               <span key={word} className="block overflow-hidden pb-[0.18em]">
                 <motion.span
@@ -54,18 +54,21 @@ export function Hero({ active }: { active: string }) {
           <motion.p {...enter(0.28)} className="mt-1 font-display text-lg text-mist">
             {site.roles}
           </motion.p>
+          <motion.p {...enter(0.32)} className="mt-4 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
+            {site.plainPitch}
+          </motion.p>
           <motion.div {...enter(0.36)} className="mt-6 max-w-xl">
             <p className="font-display text-[0.65rem] tracking-[0.2em] text-blue uppercase">
               Available to connect
             </p>
             <p
-              className="mt-2 min-h-[4.75rem] font-display text-base leading-relaxed text-ivory sm:min-h-[4rem] sm:text-lg"
+              className="mt-2 min-h-[3.75rem] font-display text-base leading-relaxed text-ivory sm:min-h-[4rem] sm:text-lg"
               aria-live="polite"
             >
               <Typewriter phrases={site.typeLines} startDelay={350} />
             </p>
           </motion.div>
-          <motion.div {...enter(0.46)} className="mt-8 flex flex-wrap gap-3">
+          <motion.div {...enter(0.46)} className="mt-6 flex flex-wrap gap-3 sm:mt-8">
             <MagneticButton href="#projects">View My Work</MagneticButton>
             <MagneticButton href={site.resumePath} variant="ghost" download>
               <FileDown className="h-4 w-4" aria-hidden="true" />
@@ -73,6 +76,10 @@ export function Hero({ active }: { active: string }) {
             </MagneticButton>
             <MagneticButton href="#contact" variant="ghost">
               Let&apos;s Connect
+            </MagneticButton>
+            <MagneticButton href={contact.whatsappHref} variant="ghost" external>
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              WhatsApp
             </MagneticButton>
             <MagneticButton href={contact.github} variant="ghost" external>
               GitHub
@@ -84,8 +91,10 @@ export function Hero({ active }: { active: string }) {
             </MagneticButton>
           </motion.div>
         </div>
-        <motion.div {...enter(0.3)} className="relative">
-          <p className="mb-3 font-display text-[0.72rem] tracking-[0.2em] text-mist uppercase">AI journey</p>
+        <motion.div {...enter(0.3)} className="relative min-w-0">
+          <p className="mb-2 font-display text-[0.72rem] tracking-[0.2em] text-mist uppercase sm:mb-3">
+            How my work connects
+          </p>
           <SystemMap activeSection={active} />
         </motion.div>
       </div>

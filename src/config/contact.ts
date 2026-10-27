@@ -4,6 +4,8 @@ export const contact = {
   emailHref: "mailto:nagdamohit19@gmail.com",
   phoneDisplay: "+91 96012 58617",
   phoneHref: "tel:+919601258617",
+  whatsappDisplay: "+91 96012 58617",
+  whatsappHref: "https://wa.me/919601258617",
   location: "Udaipur, Rajasthan, India",
   linkedin: "https://www.linkedin.com/in/mohitnagda/",
   github: "https://github.com/mohitt38",

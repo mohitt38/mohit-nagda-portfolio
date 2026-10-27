@@ -7,14 +7,14 @@ export function Experience() {
 
   return (
     <section id="experience" className="border-t border-line">
-      <div className="shell py-24">
+      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
         <SectionHeading
           index="02"
           eyebrow="Experience"
           title="Learning, then building."
           lede="Three roles so far. The through-line is the same: take a real problem, work it in Python or in a research setting, and leave something that can be evaluated."
         />
-        <ol className="relative mt-16 space-y-12 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-line-strong">
+        <ol className="relative mt-10 space-y-10 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-line-strong sm:mt-16 sm:space-y-12">
           {experience.map((item, index) => (
             <motion.li
               key={item.id}

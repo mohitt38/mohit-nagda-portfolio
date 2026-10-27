@@ -1,10 +1,11 @@
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import { useState } from "react"
 import { MagneticButton } from "../components/MagneticButton"
 import { Reveal } from "../components/Reveal"
 import { Typewriter } from "../components/Typewriter"
 import { contact } from "../config/contact"
 import { site } from "../config/site"
+import { faq } from "../data/faq"
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
@@ -21,12 +22,15 @@ export function Contact() {
 
   return (
     <section id="contact" className="border-t border-line">
-      <div className="shell py-24">
+      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
         <Reveal>
           <p className="font-display text-[0.72rem] tracking-[0.22em] text-blue uppercase">08 / Contact</p>
           <h2 className="mt-4 max-w-4xl font-display text-5xl leading-[0.95] font-medium tracking-tight text-ivory sm:text-7xl">
-            Let&apos;s build something intelligent.
+            Have an idea? Let&apos;s talk.
           </h2>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
+            I usually reply within 48 hours. Share the problem, the timeline, and what &quot;done&quot; looks like.
+          </p>
           <div className="mt-6 max-w-xl">
             <p className="font-display text-[0.65rem] tracking-[0.2em] text-blue uppercase">
               Inbox open
@@ -43,6 +47,10 @@ export function Contact() {
           <MagneticButton href={contact.emailHref}>
             <Mail className="h-4 w-4" aria-hidden="true" />
             Email
+          </MagneticButton>
+          <MagneticButton href={contact.whatsappHref} variant="ghost" external>
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            WhatsApp
           </MagneticButton>
           <MagneticButton href={contact.linkedin} variant="ghost" external>
             LinkedIn
@@ -75,6 +83,20 @@ export function Contact() {
             </a>
           </li>
           <li className="flex h-full flex-col border border-line p-6">
+            <p className="flex items-center gap-2 text-xs tracking-[0.16em] text-mist uppercase">
+              <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+              WhatsApp
+            </p>
+            <a
+              href={contact.whatsappHref}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="mt-2 block font-display text-xl text-ivory"
+            >
+              {contact.whatsappDisplay}
+            </a>
+          </li>
+          <li className="flex h-full flex-col border border-line p-6">
             <p className="text-xs tracking-[0.16em] text-mist uppercase">LinkedIn</p>
             <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="mt-2 block text-ivory">
               linkedin.com/in/mohitnagda
@@ -94,6 +116,20 @@ export function Contact() {
             <p className="mt-2 font-display text-xl text-ivory">{contact.location}</p>
           </li>
         </ul>
+        <Reveal delay={0.05}>
+          <div className="mt-10 border border-line p-6 sm:p-8">
+            <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">FAQ</p>
+            <h3 className="mt-3 font-display text-2xl tracking-tight text-ivory">Quick answers</h3>
+            <dl className="mt-6 space-y-5">
+              {faq.map((item) => (
+                <div key={item.question}>
+                  <dt className="font-display text-base text-ivory sm:text-lg">{item.question}</dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed text-mist sm:text-base">{item.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </Reveal>
         <form
           action={`https://formsubmit.co/${contact.email}`}
           method="POST"
@@ -103,9 +139,10 @@ export function Contact() {
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-          <h3 className="font-display text-2xl tracking-tight text-ivory">Have work for me?</h3>
+          <h3 className="font-display text-2xl tracking-tight text-ivory">Send a short brief</h3>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-mist">
-            If you want to work with an AI-native developer, send the project. Tell me what you need built, and I will get it at {contact.email}.
+            Tell me what you need built - chatbot, summary tool, OCR flow, or a Python backend. I will reply at{" "}
+            {contact.email}.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <label className="block text-sm text-mist">

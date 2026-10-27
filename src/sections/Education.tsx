@@ -5,7 +5,7 @@ import { education } from "../data/education"
 export function Education() {
   return (
     <section id="education" className="border-t border-line">
-      <div className="shell py-24">
+      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
         <SectionHeading
           index="06"
           eyebrow="Education"

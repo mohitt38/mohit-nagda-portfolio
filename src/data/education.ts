@@ -3,7 +3,7 @@ export const education = {
   place: "Udaipur",
   degree: "B.Tech in Computer Science",
   focus: "Specialization in Artificial Intelligence",
-  dates: "2023 – 2027",
+  dates: "2023 - 2027",
   cgpa: "9.0 / 10.0",
   standing: "Final year",
 } as const

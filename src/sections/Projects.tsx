@@ -6,14 +6,14 @@ import { GitHub } from "./GitHub"
 export function Projects() {
   return (
     <section id="projects" className="border-t border-line">
-      <div className="shell py-24">
+      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
         <SectionHeading
           index="03"
           eyebrow="Projects"
-          title="Systems with a job to do."
-          lede="Four projects from my public repositories: crop advisory, summarization, meeting tasks, and label OCR."
+          title="Tools people can actually use."
+          lede="Four working systems: a farming advice chatbot, a document summarizer, a meeting-to-tasks helper, and a parcel label reader."
         />
-        <div className="mt-14 space-y-8">
+        <div className="mt-10 space-y-6 sm:mt-14 sm:space-y-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

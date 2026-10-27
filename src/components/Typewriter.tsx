@@ -11,7 +11,7 @@ type TypewriterProps = {
 }
 
 /**
- * GPT-style streaming typewriter. Always runs — this is an intentional hero
+ * GPT-style streaming typewriter. Always runs - this is an intentional hero
  * attractor (Windows “Reduce motion” previously hid it completely).
  */
 export function Typewriter({

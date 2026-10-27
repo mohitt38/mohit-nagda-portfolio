@@ -6,7 +6,7 @@ import { featuredRepos } from "../data/featuredRepos"
 /** Activity block shown under the project case studies (same Projects section). */
 export function GitHub() {
   return (
-    <div className="mt-20 border-t border-line pt-16">
+    <div className="mt-10 border-t border-line pt-6 sm:mt-20 sm:pt-16">
       <Reveal>
         <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">
           On GitHub

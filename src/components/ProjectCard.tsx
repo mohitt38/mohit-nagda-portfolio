@@ -23,13 +23,15 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         style={{ background: `linear-gradient(135deg, ${project.accent}22, transparent 42%)` }}
       />
       <div className="grid lg:grid-cols-2 lg:items-stretch">
-        <div className="relative min-h-72 self-stretch overflow-hidden border-b border-line bg-[#0c0e12] lg:min-h-0 lg:border-r lg:border-b-0">
+        <div className="relative aspect-[640/420] w-full overflow-hidden border-b border-line bg-[#0c0e12] lg:aspect-auto lg:min-h-0 lg:self-stretch lg:border-r lg:border-b-0">
           <ProjectVisual id={project.visual} accent={project.accent} />
         </div>
-        <div className="relative flex flex-col p-6 sm:p-8">
-          <p className="font-display text-[0.72rem] tracking-[0.18em] text-mist uppercase">{project.category}</p>
-          <h3 className="mt-3 font-display text-3xl tracking-tight text-ivory">{project.name}</h3>
-          <p className="mt-4 text-sm leading-relaxed text-ivory/90">{project.problem}</p>
+        <div className="relative flex min-w-0 flex-col p-5 sm:p-6 lg:p-8">
+          <p className="font-display text-[0.72rem] tracking-[0.18em] break-words text-mist uppercase">{project.category}</p>
+          <h3 className="mt-3 font-display text-2xl tracking-tight break-words text-ivory sm:text-3xl">{project.name}</h3>
+          <p className="mt-1 font-display text-sm tracking-wide text-blue sm:text-base">{project.plainName}</p>
+          <p className="mt-4 text-sm leading-relaxed text-ivory/90">{project.outcome}</p>
+          <p className="mt-3 text-sm leading-relaxed text-mist">{project.problem}</p>
           <p className="mt-3 text-sm leading-relaxed text-mist">{project.summary}</p>
           <ul className="mt-5 flex flex-wrap gap-2">
             {project.stack.map((item) => (
@@ -54,7 +56,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
               onClick={() => setOpen((value) => !value)}
               className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line-strong px-4 text-sm text-ivory"
             >
-              {open ? "Hide the build" : "What I built"}
+              {open ? "Hide details" : "How it works"}
               <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
           </div>

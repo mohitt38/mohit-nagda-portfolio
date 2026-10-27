@@ -116,6 +116,9 @@ export function Navbar({ active }: { active: string }) {
               <a href={contact.emailHref} className="text-mist">
                 Email
               </a>
+              <a href={contact.whatsappHref} target="_blank" rel="noreferrer noopener" className="text-mist">
+                WhatsApp
+              </a>
               <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="text-mist">
                 LinkedIn
               </a>

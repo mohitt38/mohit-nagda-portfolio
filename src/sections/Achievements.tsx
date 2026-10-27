@@ -5,7 +5,7 @@ import { credentials, volunteer } from "../data/achievements"
 export function Achievements() {
   return (
     <section id="achievements" className="border-t border-line">
-      <div className="shell py-24">
+      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
         <SectionHeading
           index="07"
           eyebrow="Achievements"

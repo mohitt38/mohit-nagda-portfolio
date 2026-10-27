@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { useEffect, useState, type ReactNode } from "react"
 import type { ProjectVisualId } from "../data/projects"
 
 function Frame({
@@ -12,8 +12,24 @@ function Frame({
   label: string
   children: ReactNode
 }) {
+  const [cover, setCover] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)")
+    const sync = () => setCover(media.matches)
+    sync()
+    media.addEventListener("change", sync)
+    return () => media.removeEventListener("change", sync)
+  }, [])
+
   return (
-    <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full" role="img" aria-label={label}>
+    <svg
+      viewBox="0 0 640 420"
+      preserveAspectRatio={cover ? "xMidYMid slice" : "xMidYMid meet"}
+      className="absolute inset-0 h-full w-full"
+      role="img"
+      aria-label={label}
+    >
       <defs>
         <pattern id={`${id}-grid`} width="28" height="28" patternUnits="userSpaceOnUse">
           <path d="M28 0 H0 V28" fill="none" stroke="#e8ecf4" strokeOpacity="0.045" />
@@ -80,7 +96,7 @@ export function ProjectVisual({ id, accent }: { id: ProjectVisualId; accent: str
             </text>
           </g>
         ))}
-        <text x="36" y="42" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
+        <text x="36" y="48" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
           RAG · CROP ADVISORY
         </text>
       </Frame>
@@ -123,7 +139,7 @@ export function ProjectVisual({ id, accent }: { id: ProjectVisualId; accent: str
             BART
           </text>
         </g>
-        <text x="36" y="42" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
+        <text x="36" y="48" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
           EXTRACTIVE + ABSTRACTIVE
         </text>
       </Frame>
@@ -158,12 +174,12 @@ export function ProjectVisual({ id, accent }: { id: ProjectVisualId; accent: str
             ["Priority", "High"],
             ["Owner", "Assigned"],
             ["Due", "This week"],
-          ].map(([label, value], index) => (
-            <g key={label} transform={`translate(384 ${146 + index * 52})`}>
+          ].map(([taskLabel, value], index) => (
+            <g key={taskLabel} transform={`translate(384 ${146 + index * 52})`}>
               <circle cx="10" cy="10" r="10" fill="none" stroke={accent} />
               <path d="M5 10.5 L8.4 14 L15 6.5" fill="none" stroke={accent} strokeWidth="1.6" />
               <text x="32" y="8" fill="#a3acbd" fontSize="11" fontFamily="Inter, sans-serif">
-                {label}
+                {taskLabel}
               </text>
               <text x="32" y="26" fill="#e8ecf4" fontSize="15" fontFamily="Space Grotesk, sans-serif">
                 {value}
@@ -171,7 +187,7 @@ export function ProjectVisual({ id, accent }: { id: ProjectVisualId; accent: str
             </g>
           ))}
         </g>
-        <text x="36" y="42" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
+        <text x="36" y="48" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
           OFFLINE PIPELINE
         </text>
       </Frame>
@@ -198,7 +214,7 @@ export function ProjectVisual({ id, accent }: { id: ProjectVisualId; accent: str
       </g>
       <path d="M150 118 H190 M430 96 H470 M168 330 H208 M448 308 H488" stroke={accent} strokeWidth="3" strokeLinecap="round" />
       <rect x="168" y="188" width="300" height="3" fill={accent} opacity="0.85" />
-      <text x="36" y="42" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
+      <text x="36" y="48" fill="#a3acbd" fontSize="13" letterSpacing="2.4" fontFamily="Space Grotesk, sans-serif">
         BARCODE FIRST · OCR FALLBACK
       </text>
     </Frame>

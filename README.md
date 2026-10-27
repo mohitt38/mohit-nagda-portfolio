@@ -1,4 +1,4 @@
-# Mohit Nagda — Portfolio
+# Mohit Nagda - Portfolio
 
 **Live site: https://mohit-nagda.vercel.app**
 

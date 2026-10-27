@@ -1,25 +1,33 @@
 export const site = {
   url: "https://mohit-nagda.vercel.app",
-  title: "Mohit Nagda | AI Engineer — Generative AI, RAG & Python",
+  title: "Mohit Nagda | AI Engineer - Generative AI, RAG & Python",
   description:
-    "Mohit Nagda is a final-year AI-focused computer science student and Python developer building real systems with Generative AI, LLMs, RAG, and NLP. Explore projects in crop advisory, summarization, meeting intelligence, and OCR — based in Udaipur, India.",
+    "Mohit Nagda is an AI Engineer in Udaipur building practical tools with Generative AI, LLMs, RAG, and Python - farming chatbots, document summarizers, meeting-to-task helpers, and OCR. Open to roles and collaboration.",
   positioning: "AI Engineer",
   roles: "Generative AI • RAG • Python",
+  /** Plain-language line for non-tech visitors (SEO keywords stay in title/meta). */
+  plainPitch:
+    "I build AI tools that answer questions, summarize documents, and turn meetings into clear next steps.",
   statement:
     "Building real-world AI systems across Generative AI, LLMs, RAG, NLP and backend development.",
-  /** Hero GPT-style streaming lines — invite people to connect. */
-  typeLines: [
-    "I am available for AI projects — let's build something intelligent together.",
-    "Have a product idea, research problem, or internship brief? Reach out.",
-    "Open to freelance, collaboration, and full-time AI / Python roles.",
-    "If you need Generative AI, RAG, NLP, or a working prototype — connect with me.",
+  hireFor: [
+    "AI chatbots and Q&A assistants",
+    "Document and meeting productivity tools",
+    "OCR / label reading and Python backends",
   ],
-  /** Contact section stream — shorter close-the-loop lines. */
+  /** Hero GPT-style streaming lines - invite people to connect. */
+  typeLines: [
+    "Have an idea for an AI tool? I reply to real project notes within a couple of days.",
+    "Looking for someone who can turn a problem into a working prototype - let's talk.",
+    "Open to full-time roles, freelance, and research collaborations.",
+    "Need a chatbot, summarizer, OCR flow, or Python backend? Reach out.",
+  ],
+  /** Contact section stream - shorter close-the-loop lines. */
   contactTypeLines: [
-    "Drop a message — I reply to real project notes and roles.",
+    "Have an idea? Send a short note - I usually reply within 48 hours.",
     "Tell me what you need built. I will get back at nagdamohit19@gmail.com.",
-    "Available for AI work, research collabs, and internship conversations.",
-    "Your idea + my stack — Generative AI, RAG, NLP, Python. Let's talk.",
+    "Open to AI work, internships, and collaboration conversations.",
+    "Your idea + my skills - chatbots, RAG, NLP, Python. Let's talk.",
   ],
   resumePath: "/Mohit-Nagda-Resume.pdf",
   ogImage: "/mohit-portrait.png",

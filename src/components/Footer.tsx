@@ -12,6 +12,9 @@ export function Footer() {
           <a href="#achievements" className="hover:text-ivory">
             Certifications
           </a>
+          <a href={contact.whatsappHref} target="_blank" rel="noreferrer noopener" className="hover:text-ivory">
+            WhatsApp
+          </a>
           <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="hover:text-ivory">
             LinkedIn
           </a>

@@ -24,19 +24,19 @@ export const credentials: Credential[] = [
   {
     id: "ibm-agent",
     kind: "Certification",
-    title: "Learner to Builder: AI Agent Architect — IBM",
+    title: "Learner to Builder: AI Agent Architect - IBM",
     detail: "Hands-on training in designing multi-agent AI systems and architectures. 2025.",
   },
   {
     id: "prompt",
     kind: "Certification",
-    title: "Prompt Engineering — IBM SkillsBuild / CSRBOX",
-    detail: "Completed 2024–25.",
+    title: "Prompt Engineering - IBM SkillsBuild / CSRBOX",
+    detail: "Completed 2024-25.",
   },
   {
     id: "bootcamp",
     kind: "Bootcamp",
-    title: "Data Science, ML, Deep Learning & NLP — Krish Naik",
+    title: "Data Science, ML, Deep Learning & NLP - Krish Naik",
     detail: "End-to-end training across the ML, deep learning, and NLP stack, with project work. 2024.",
   },
   {
@@ -50,7 +50,7 @@ export const credentials: Credential[] = [
 
 export const volunteer = {
   role: "Technical volunteer",
-  event: "The 4th State — Plasma Exhibition",
+  event: "The 4th State - Plasma Exhibition",
   org: "Institute of Plasma Research (IPR)",
   detail:
     "Supported event coordination and public STEM outreach at the exhibition.",
