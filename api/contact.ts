@@ -6,7 +6,8 @@ type ContactPayload = {
   _honey?: string
 }
 
-const TO = "nagdamohit19@gmail.com"
+// Resend's test sender can only deliver to the account inbox until a domain is verified.
+const TO = "mohitnagda83@gmail.com"
 const FROM = "Mohit Nagda <onboarding@resend.dev>"
 
 function json(status: number, body: Record<string, unknown>) {
