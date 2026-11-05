@@ -1,10 +1,6 @@
-import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import { useState, type FormEvent } from "react"
-import { MagneticButton } from "../components/MagneticButton"
-import { Reveal } from "../components/Reveal"
-import { Typewriter } from "../components/Typewriter"
+import { Icon } from "../components/Icon"
 import { contact } from "../config/contact"
-import { site } from "../config/site"
 import { faq } from "../data/faq"
 
 export function Contact() {
@@ -57,181 +53,153 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-line">
-      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
-        <Reveal>
-          <p className="font-display text-[0.72rem] tracking-[0.22em] text-blue uppercase">08 / Contact</p>
-          <h2 className="mt-4 max-w-4xl font-display text-5xl leading-[0.95] font-medium tracking-tight text-ivory sm:text-7xl">
-            Have an idea? Let&apos;s talk.
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
-            I usually reply within 48 hours. Share the problem, the timeline, and what &quot;done&quot; looks like.
-          </p>
-          <div className="mt-6 max-w-xl">
-            <p className="font-display text-[0.65rem] tracking-[0.2em] text-blue uppercase">
-              Inbox open
-            </p>
-            <p
-              className="mt-2 min-h-[3.5rem] font-display text-lg leading-relaxed text-ivory sm:min-h-[3rem]"
-              aria-live="polite"
-            >
-              <Typewriter phrases={site.contactTypeLines} startDelay={200} />
-            </p>
-          </div>
-        </Reveal>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <MagneticButton href={contact.emailHref}>
-            <Mail className="h-4 w-4" aria-hidden="true" />
-            Email
-          </MagneticButton>
-          <MagneticButton href={contact.whatsappHref} variant="ghost" external>
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            WhatsApp
-          </MagneticButton>
-          <MagneticButton href={contact.linkedin} variant="ghost" external>
-            LinkedIn
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </MagneticButton>
-          <MagneticButton href={contact.github} variant="ghost" external>
-            GitHub
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </MagneticButton>
-        </div>
-        <ul className="mt-12 grid items-stretch gap-4 sm:grid-cols-2">
-          <li className="flex h-full flex-col border border-line p-6">
-            <p className="text-xs tracking-[0.16em] text-mist uppercase">Email</p>
-            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <a href={contact.emailHref} className="font-display text-xl text-ivory">
-                {contact.email}
-              </a>
-              <button type="button" onClick={copyEmail} className="text-sm text-blue">
-                {copied ? "Copied" : "Copy"}
-              </button>
+    <section id="contact" className="w-full py-space-xl lg:py-margin">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-space-xl px-gutter-mobile lg:px-gutter">
+        <div className="relative flex flex-col items-start justify-between gap-space-xl overflow-hidden rounded-2xl bg-surface-container p-space-xl shadow-xl lg:flex-row lg:p-margin">
+          <div className="pointer-events-none absolute -right-20 -bottom-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+          <div className="relative z-10 flex flex-col gap-space-lg lg:w-3/5">
+            <div className="flex items-center gap-space-xs">
+              <span className="font-mono-meta text-mono-meta font-semibold text-primary">07 // INITIALIZE HANDSHAKE</span>
+              <span className="text-outline">-</span>
+              <span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">Open for conversations</span>
             </div>
-          </li>
-          <li className="flex h-full flex-col border border-line p-6">
-            <p className="flex items-center gap-2 text-xs tracking-[0.16em] text-mist uppercase">
-              <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-              Phone
+            <h2 className="font-display-xl text-[36px] leading-[44px] tracking-tight text-on-surface lg:text-display-xl">
+              Have a problem worth solving?
+              <br />
+              Let&apos;s build something intelligent.
+            </h2>
+            <p className="max-w-xl font-body-lg text-body-lg text-on-surface-variant">
+              Open to full-time roles, freelance, and research collaboration. I usually reply within 48 hours.
             </p>
-            <a href={contact.phoneHref} className="mt-2 block font-display text-xl text-ivory">
-              {contact.phoneDisplay}
-            </a>
-          </li>
-          <li className="flex h-full flex-col border border-line p-6">
-            <p className="flex items-center gap-2 text-xs tracking-[0.16em] text-mist uppercase">
-              <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
-              WhatsApp
-            </p>
-            <a
-              href={contact.whatsappHref}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-2 block font-display text-xl text-ivory"
-            >
-              {contact.whatsappDisplay}
-            </a>
-          </li>
-          <li className="flex h-full flex-col border border-line p-6">
-            <p className="text-xs tracking-[0.16em] text-mist uppercase">LinkedIn</p>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="mt-2 block text-ivory">
-              linkedin.com/in/mohitnagda
-            </a>
-          </li>
-          <li className="flex h-full flex-col border border-line p-6">
-            <p className="text-xs tracking-[0.16em] text-mist uppercase">GitHub</p>
-            <a href={contact.github} target="_blank" rel="noreferrer noopener" className="mt-2 block text-ivory">
-              github.com/mohitt38
-            </a>
-          </li>
-          <li className="flex h-full flex-col border border-line p-6 sm:col-span-2">
-            <p className="flex items-center gap-2 text-xs tracking-[0.16em] text-mist uppercase">
-              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-              Location
-            </p>
-            <p className="mt-2 font-display text-xl text-ivory">{contact.location}</p>
-          </li>
-        </ul>
-        <Reveal delay={0.05}>
-          <div className="mt-10 border border-line p-6 sm:p-8">
-            <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">FAQ</p>
-            <h3 className="mt-3 font-display text-2xl tracking-tight text-ivory">Quick answers</h3>
-            <dl className="mt-6 space-y-5">
-              {faq.map((item) => (
-                <div key={item.question}>
-                  <dt className="font-display text-base text-ivory sm:text-lg">{item.question}</dt>
-                  <dd className="mt-1.5 text-sm leading-relaxed text-mist sm:text-base">{item.answer}</dd>
-                </div>
-              ))}
-            </dl>
+            <div className="flex flex-wrap items-center gap-space-md pt-space-xs">
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="inline-flex items-center gap-space-sm rounded bg-primary px-space-lg py-space-sm font-mono-metric text-mono-metric font-medium text-on-primary shadow-md hover:bg-primary-fixed-dim"
+              >
+                <Icon name="content_copy" className="text-[18px]" />
+                {copied ? "Copied" : `Copy email: ${contact.email}`}
+              </button>
+              <a
+                href={contact.whatsappHref}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-space-sm rounded bg-surface-container-high px-space-lg py-space-sm font-mono-metric text-mono-metric text-on-surface hover:bg-surface-bright"
+              >
+                <Icon name="chat" className="text-[18px] text-primary" />
+                WhatsApp ({contact.whatsappDisplay})
+              </a>
+            </div>
           </div>
-        </Reveal>
-        <form onSubmit={onSubmit} className="mt-8 border border-line p-6 sm:p-8">
+          <div className="relative z-10 flex w-full flex-col gap-space-md lg:w-2/5">
+            <div className="flex flex-col gap-space-md rounded-xl bg-surface-container-high p-space-lg">
+              <div className="flex items-center justify-between pb-space-xs">
+                <span className="font-mono-meta text-mono-meta text-outline uppercase">Verified channels</span>
+                <span className="h-2 w-2 rounded-full bg-primary" />
+              </div>
+              <div className="flex flex-col gap-space-sm font-mono-metric text-mono-metric">
+                <Channel href={contact.emailHref} label={contact.email} />
+                <Channel href={contact.github} label="github.com/mohitt38" external />
+                <Channel href={contact.linkedin} label="linkedin.com/in/mohitnagda" external />
+                <div className="flex items-center justify-between rounded bg-surface-container p-space-sm">
+                  <span className="text-on-surface-variant">{contact.location}</span>
+                  <span className="font-mono-meta text-[11px] text-outline">IST (UTC+5:30)</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-between pt-space-xs font-mono-meta text-[11px] text-outline">
+                <span>MACHINE READABLE:</span>
+                <span className="text-primary">
+                  <a href="/llms.txt">/llms.txt</a> • <a href="/profile.md">/profile.md</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form onSubmit={onSubmit} className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-lg">
           <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-          <h3 className="font-display text-2xl tracking-tight text-ivory">Send a short brief</h3>
-          <p className="mt-2 max-w-xl text-sm leading-relaxed text-mist">
-            Tell me what you need built - chatbot, summary tool, OCR flow, or a Python backend. I will reply at{" "}
-            {contact.email}.
+          <h3 className="font-headline-md text-headline-md text-on-surface">Send a short brief</h3>
+          <p className="mt-2 max-w-xl font-body-md text-body-md text-on-surface-variant">
+            Tell me what you need built. I will reply at {contact.email}.
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <label className="block text-sm text-mist">
-              Name
-              <input
-                required
-                name="name"
-                autoComplete="name"
-                className="mt-2 w-full border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
-              />
-            </label>
-            <label className="block text-sm text-mist">
-              Email
-              <input
-                required
-                type="email"
-                name="email"
-                autoComplete="email"
-                className="mt-2 w-full border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
-              />
-            </label>
-            <label className="block text-sm text-mist sm:col-span-2">
-              Contact number
-              <input
-                required
-                type="tel"
-                name="phone"
-                autoComplete="tel"
-                className="mt-2 w-full border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
-              />
-            </label>
-            <label className="block text-sm text-mist sm:col-span-2">
+          <div className="mt-6 grid gap-space-md sm:grid-cols-2">
+            <Field label="Name" name="name" autoComplete="name" />
+            <Field label="Email" name="email" type="email" autoComplete="email" />
+            <Field label="Contact number" name="phone" type="tel" autoComplete="tel" wide />
+            <label className="block font-mono-meta text-mono-meta text-outline uppercase sm:col-span-2">
               Message
               <textarea
                 required
                 name="message"
                 rows={5}
-                className="mt-2 w-full resize-y border border-line-strong bg-transparent px-3 py-3 text-ivory outline-none focus:border-blue"
+                className="mt-2 w-full resize-y rounded border border-outline-variant bg-surface-container-lowest px-3 py-3 font-body-md text-body-md text-on-surface outline-none focus:border-primary"
               />
             </label>
           </div>
           <button
             type="submit"
             disabled={sending}
-            className="mt-6 inline-flex min-h-11 items-center rounded-full bg-ivory px-5 font-display text-sm text-ink disabled:opacity-60"
+            className="mt-6 inline-flex items-center rounded bg-primary px-space-lg py-space-sm font-mono-metric text-mono-metric font-medium text-on-primary disabled:opacity-60"
           >
             {sending ? "Sending..." : "Send message"}
           </button>
-          {sent ? (
-            <p className="mt-4 text-sm text-ivory" role="status">
-              Message sent. I will reply at the email you entered.
-            </p>
-          ) : null}
-          {formError ? (
-            <p className="mt-4 text-sm text-blue" role="alert">
-              {formError}
-            </p>
-          ) : null}
+          {sent ? <p className="mt-4 font-body-sm text-body-sm text-on-surface">Message sent. I will reply at the email you entered.</p> : null}
+          {formError ? <p className="mt-4 font-body-sm text-body-sm text-primary">{formError}</p> : null}
         </form>
+
+        <div className="rounded-xl border border-outline-variant/40 p-space-lg">
+          <p className="font-mono-meta text-mono-meta text-primary uppercase">FAQ</p>
+          <h3 className="mt-2 font-headline-md text-headline-md text-on-surface">Quick answers</h3>
+          <dl className="mt-6 space-y-5">
+            {faq.map((item) => (
+              <div key={item.question}>
+                <dt className="font-headline-sm text-headline-sm text-on-surface">{item.question}</dt>
+                <dd className="mt-1 font-body-md text-body-md text-on-surface-variant">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
+  )
+}
+
+function Channel({ href, label, external = false }: { href: string; label: string; external?: boolean }) {
+  return (
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+      className="flex items-center justify-between rounded bg-surface-container p-space-sm hover:bg-surface-bright"
+    >
+      <span className="text-on-surface-variant">{label}</span>
+      <Icon name="arrow_outward" className="text-[16px] text-primary" />
+    </a>
+  )
+}
+
+function Field({
+  label,
+  name,
+  type = "text",
+  autoComplete,
+  wide = false,
+}: {
+  label: string
+  name: string
+  type?: string
+  autoComplete: string
+  wide?: boolean
+}) {
+  return (
+    <label className={`block font-mono-meta text-mono-meta text-outline uppercase ${wide ? "sm:col-span-2" : ""}`}>
+      {label}
+      <input
+        required
+        type={type}
+        name={name}
+        autoComplete={autoComplete}
+        className="mt-2 w-full rounded border border-outline-variant bg-surface-container-lowest px-3 py-3 font-body-md text-body-md text-on-surface outline-none focus:border-primary"
+      />
+    </label>
   )
 }

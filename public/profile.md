@@ -1,5 +1,7 @@
 # Mohit Nagda - AI Engineer
 
+Last updated: 2026-11-05. This file is the canonical fact sheet for Mohit Nagda. Portfolio: https://mohit-nagda.vercel.app/
+
 ## Summary
 
 Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds practical AI tools with Generative AI, LLMs, RAG, NLP, and Python - including chatbots, document summarizers, meeting-to-task helpers, and OCR / label readers.
@@ -15,12 +17,14 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
 | Location | Udaipur, Rajasthan, India |
 | Education | B.Tech Computer Science (AI specialization), Geetanjali Institute of Technical Studies (2023-2027), CGPA 9.0/10 |
 | Standing | Final-year student |
-| Current role | Python Developer Intern, Toba Tech Solutions (July 2026 - Present) |
+| Current role | Python Developer Intern, Toba Tech Solutions (July 2026 - November 2026) |
 | Portfolio | https://mohit-nagda.vercel.app/ |
 | Email | nagdamohit19@gmail.com |
 | Phone / WhatsApp | +91 96012 58617 |
 | GitHub | https://github.com/mohitt38 |
 | LinkedIn | https://www.linkedin.com/in/mohitnagda/ |
+| Instagram | https://www.instagram.com/_.mohiittt__/ |
+| X | https://x.com/mohitt_19 |
 | Resume | https://mohit-nagda.vercel.app/Mohit-Nagda-Resume.pdf |
 
 ## Hire me for
@@ -31,7 +35,7 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
 
 ## Experience
 
-1. **Python Developer Intern - Toba Tech Solutions** (Udaipur, July 2026 - Present)  
+1. **Python Developer Intern - Toba Tech Solutions** (Udaipur, July 2026 - November 2026)  
    Python backend for ContentX; AI workflows from script input to generated content.
 
 2. **AI Research Intern - Tech Adaptive Pandit Pty Ltd** (Australia, remote, Dec 2025 - June 2026)  
@@ -58,6 +62,13 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
    Stack: OpenCV, Tesseract, Python, Streamlit.  
    Repo: https://github.com/mohitt38/OCR-text-extractor
 
+## Research
+
+1. Comparative Evaluation of LLM Models for Clinically Realistic SOAP Documentation
+2. Agentic AI-Based Clinical Automation Framework for Healthcare Systems
+
+Preprints are available on request from the portfolio research section.
+
 ## Skills & focus
 
 Generative AI, LLMs, RAG, LangChain, NLP, machine learning, Python backend, clinical NLP research, computer vision / OCR, Hugging Face, Streamlit, Flask.
@@ -80,4 +91,6 @@ Yes. He is open to full-time AI / Python roles, freelance projects, research col
 
 Portfolio: https://mohit-nagda.vercel.app/  
 GitHub: https://github.com/mohitt38  
-LinkedIn: https://www.linkedin.com/in/mohitnagda/
+LinkedIn: https://www.linkedin.com/in/mohitnagda/  
+Instagram: https://www.instagram.com/_.mohiittt__/  
+X: https://x.com/mohitt_19

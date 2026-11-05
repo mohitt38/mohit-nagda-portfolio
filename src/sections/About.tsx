@@ -1,93 +1,103 @@
-import { Reveal } from "../components/Reveal"
-import { SectionHeading } from "../components/SectionHeading"
 import { site } from "../config/site"
-import { education, story } from "../data/education"
+import { Icon } from "../components/Icon"
+
+const blocks = [
+  {
+    id: "BLOCK 01",
+    icon: "psychology",
+    title: "AI Systems & RAG",
+    body: "Chatbots and Q&A tools that look up real knowledge first, so answers stay useful instead of guessed.",
+    tags: ["LangChain", "RAG", "Gemini"],
+  },
+  {
+    id: "BLOCK 02",
+    icon: "developer_board",
+    title: "Python backends",
+    body: "Services and workflows that take a script or a document and turn it into something a person can open.",
+    tags: ["Python", "Flask", "Streamlit"],
+  },
+  {
+    id: "BLOCK 03",
+    icon: "biotech",
+    title: "Clinical AI research",
+    body: "Work on SOAP-style clinical documentation and agentic healthcare workflows during a research internship.",
+    tags: ["Clinical NLP", "SOAP notes", "Agentic AI"],
+  },
+]
 
 export function About() {
   return (
-    <section id="about" className="shell pt-6 pb-10 sm:py-20 lg:py-24">
-      <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-12">
-        <div>
-          <SectionHeading
-            index="01"
-            eyebrow="About"
-            title="From a problem to a working system."
-            lede="I am a final-year computer science student focused on artificial intelligence. In plain terms: I build practical AI tools with Python - chatbots, summarizers, meeting helpers, and label readers."
-          />
-          <Reveal delay={0.05}>
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-mist sm:text-lg">
-              <p>
-                Right now I am a Python Developer Intern at Toba Tech Solutions, contributing to the backend of ContentX
-                and to AI workflows that take a script through to generated content.
-              </p>
-              <p>
-                Before that I was a remote AI Research Intern with Tech Adaptive Pandit Pty Ltd, working on clinical
-                documentation and diagnostic reasoning. Earlier, at Grass Solutions, I built machine learning pipelines
-                from raw data through evaluation.
-              </p>
-              <p>
-                I like the stretch between an idea and a prototype someone can actually open: a crop advisor, a
-                summarizer, an offline meeting tool, or a label reader.
-              </p>
-              <p className="text-ivory">I am an AI-native developer who ships things people can try.</p>
+    <section id="about" className="w-full bg-surface-container-lowest py-space-xl lg:py-margin">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-space-xl px-gutter-mobile lg:px-gutter">
+        <div className="flex flex-col justify-between gap-space-md md:flex-row md:items-end">
+          <div className="flex flex-col gap-space-xs">
+            <div className="flex items-center gap-space-xs">
+              <span className="font-mono-meta text-mono-meta font-semibold text-primary">01 // CONTEXT & PHILOSOPHY</span>
+              <span className="text-outline">-</span>
+              <span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">Architectural profile</span>
             </div>
-          </Reveal>
-
-          <Reveal delay={0.08}>
-            <aside className="mt-8 border border-line bg-surface p-5 sm:p-6">
-              <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">Hire me for</p>
-              <ul className="mt-4 space-y-2">
-                {site.hireFor.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-ivory sm:text-base">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-blue" aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href="#contact" className="mt-5 inline-block text-sm text-blue hover:underline">
-                Tell me what you need built →
-              </a>
-            </aside>
-          </Reveal>
-        </div>
-
-        <Reveal delay={0.06} className="w-full">
-          <div className="flex w-full flex-col gap-4">
-            <figure className="w-full overflow-hidden">
-              <img
-                src="/mohit-portrait.png"
-                alt="Illustrated portrait of Mohit Nagda at a desk with AI and Python books"
-                className="mx-auto block h-auto w-full origin-top scale-[1.06] bg-transparent object-contain object-top lg:mx-0"
-                width={819}
-                height={819}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-
-            <aside className="w-full border border-line bg-surface p-5 sm:p-6">
-              <p className="font-display text-[0.72rem] tracking-[0.18em] text-blue uppercase">Now</p>
-              <p className="mt-2 font-display text-xl tracking-tight text-ivory">{education.standing}</p>
-              <p className="mt-2 text-sm leading-relaxed text-mist">
-                {education.degree}
-                <span className="mt-1 block">{education.focus}</span>
-                <span className="mt-1 block">{education.school}</span>
-                <span className="mt-3 block text-ivory">CGPA {education.cgpa}</span>
-              </p>
-            </aside>
+            <h2 className="font-headline-lg text-[28px] leading-9 text-on-surface lg:text-headline-lg">
+              Curiosity drives the build.
+            </h2>
           </div>
-        </Reveal>
+          <p className="max-w-md font-mono-metric text-mono-metric text-outline">
+            Practical AI tools: questions answered, documents shortened, meetings turned into next steps.
+          </p>
+        </div>
+        <div className="flex flex-col items-start gap-space-xl rounded-lg bg-surface-container p-space-lg md:flex-row">
+          <div className="flex flex-col gap-space-md font-body-md text-body-md leading-relaxed text-on-surface-variant md:w-2/3">
+            <p>
+              I am a final-year Computer Science student specializing in Artificial Intelligence at Geetanjali
+              Institute of Technical Studies, Udaipur, with a <strong className="text-on-surface">9.0 / 10.0 CGPA</strong>.
+              {` ${site.plainPitch}`}
+            </p>
+            <p>
+              Right now I am a Python Developer Intern at Toba Tech Solutions, working on the ContentX backend and AI
+              workflows from a script to generated content. Before that I researched clinical documentation, and earlier
+              I built machine-learning pipelines from raw data through evaluation.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-space-sm md:w-1/3">
+            <div className="flex flex-col gap-space-xs rounded bg-surface-container-high p-space-md">
+              <span className="font-mono-meta text-mono-meta text-outline uppercase">Core specialization</span>
+              <span className="font-headline-sm text-headline-sm text-on-surface">Applied Generative AI & RAG</span>
+              <span className="font-mono-meta text-mono-meta text-primary">Python • LangChain • Streamlit</span>
+            </div>
+            <div className="flex flex-col gap-space-xs rounded bg-surface-container-high p-space-md">
+              <span className="font-mono-meta text-mono-meta text-outline uppercase">Hire me for</span>
+              {site.hireFor.map((item) => (
+                <span key={item} className="font-body-sm text-body-sm text-on-surface">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-space-md md:grid-cols-3">
+          {blocks.map((block) => (
+            <div
+              key={block.id}
+              className="group flex flex-col justify-between gap-space-lg rounded-lg bg-surface-container-low p-space-lg transition-all hover:bg-surface-container"
+            >
+              <div className="flex flex-col gap-space-sm">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono-meta text-mono-meta font-semibold text-primary">{block.id}</span>
+                  <Icon name={block.icon} className="text-outline group-hover:text-primary" />
+                </div>
+                <h3 className="font-headline-md text-headline-md text-on-surface">{block.title}</h3>
+                <p className="font-body-md text-body-md text-on-surface-variant">{block.body}</p>
+              </div>
+              <div className="flex flex-wrap gap-space-xs pt-space-xs font-mono-meta text-[11px] text-outline">
+                {block.tags.map((tag) => (
+                  <span key={tag} className="rounded bg-surface-container-highest px-2 py-0.5">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-
-      <ol className="mt-10 grid items-stretch gap-px border border-line bg-line sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
-        {story.map((step, index) => (
-          <li key={step.id} className="flex h-full min-h-24 flex-col bg-ink px-4 py-4 sm:min-h-28 sm:px-5 sm:py-5">
-            <p className="font-display text-[0.68rem] tracking-[0.16em] text-blue">0{index + 1}</p>
-            <p className="mt-3 font-display text-lg text-ivory">{step.label}</p>
-            <p className="mt-1 text-sm leading-relaxed text-mist">{step.detail}</p>
-          </li>
-        ))}
-      </ol>
     </section>
   )
 }

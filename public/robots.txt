@@ -1,7 +1,31 @@
 User-agent: *
 Allow: /
 
-# Agent-readable profile (GEO / llms.txt)
+# Answer engines may read the canonical facts
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # https://mohit-nagda.vercel.app/llms.txt
 # https://mohit-nagda.vercel.app/profile.md
 

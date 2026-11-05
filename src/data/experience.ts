@@ -15,7 +15,7 @@ export const experience: ExperienceItem[] = [
     role: "Python Developer Intern",
     org: "Toba Tech Solutions",
     place: "Udaipur",
-    dates: "July 2026 - Present",
+    dates: "July 2026 - November 2026",
     current: true,
     summary:
       "Working on the Python backend for ContentX, and on AI generation workflows that move from a script to finished content.",

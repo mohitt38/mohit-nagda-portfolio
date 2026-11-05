@@ -36,7 +36,7 @@ function applyTheme(theme: Theme) {
   root.classList.toggle("dark", theme === "dark")
   root.style.colorScheme = theme
   const meta = document.querySelector('meta[name="theme-color"]')
-  if (meta) meta.setAttribute("content", theme === "light" ? "#eef1f7" : "#08090d")
+  if (meta) meta.setAttribute("content", theme === "light" ? "#F7F8FA" : "#111317")
   const scheme = document.querySelector('meta[name="color-scheme"]')
   if (scheme) scheme.setAttribute("content", theme)
 }

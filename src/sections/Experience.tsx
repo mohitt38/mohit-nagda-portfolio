@@ -1,60 +1,69 @@
-import { motion, useReducedMotion } from "framer-motion"
-import { SectionHeading } from "../components/SectionHeading"
+import { Icon } from "../components/Icon"
 import { experience } from "../data/experience"
 
-export function Experience() {
-  const reduce = useReducedMotion()
+const tags: Record<string, string[]> = {
+  toba: ["Python", "ContentX", "AI workflows", "Backend"],
+  tap: ["Clinical NLP", "SOAP notes", "LLMs", "Research"],
+  grass: ["scikit-learn", "Pandas", "NumPy", "TensorFlow"],
+}
 
+const badges: Record<string, string> = {
+  toba: "Current appointment",
+  tap: "Research internship",
+  grass: "ML internship",
+}
+
+export function Experience() {
   return (
-    <section id="experience" className="border-t border-line">
-      <div className="shell pt-6 pb-14 sm:py-20 lg:py-24">
-        <SectionHeading
-          index="02"
-          eyebrow="Experience"
-          title="Learning, then building."
-          lede="Three roles so far. The through-line is the same: take a real problem, work it in Python or in a research setting, and leave something that can be evaluated."
-        />
-        <ol className="relative mt-10 space-y-10 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-line-strong sm:mt-16 sm:space-y-12">
-          {experience.map((item, index) => (
-            <motion.li
-              key={item.id}
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-              transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : index * 0.05 }}
-              className="relative pl-10"
+    <section id="experience" className="w-full py-space-xl lg:py-margin">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-space-xl px-gutter-mobile lg:px-gutter">
+        <div className="flex flex-col gap-space-xs">
+          <div className="flex items-center gap-space-xs">
+            <span className="font-mono-meta text-mono-meta font-semibold text-primary">02 // TRACK RECORD</span>
+            <span className="text-outline">-</span>
+            <span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">Industry experience</span>
+          </div>
+          <h2 className="font-headline-lg text-[28px] leading-9 text-on-surface lg:text-headline-lg">Learning by building.</h2>
+        </div>
+        <div className="flex flex-col gap-space-md">
+          {experience.map((role) => (
+            <article
+              key={role.id}
+              className="flex flex-col justify-between gap-space-lg rounded-lg bg-surface-container-low p-space-lg shadow-sm transition-all hover:bg-surface-container lg:flex-row"
             >
-              <span
-                className={`absolute top-1.5 left-0 h-3 w-3 rounded-full border border-ink ${
-                  item.current ? "bg-blue" : "bg-mist"
-                }`}
-                aria-hidden="true"
-              />
-              <div className="flex flex-wrap items-center gap-3">
-                <p className="font-display text-sm tracking-wide text-blue">{item.dates}</p>
-                {item.current ? (
-                  <span className="rounded-full border border-blue/40 px-2 py-0.5 text-[0.68rem] tracking-wide text-blue uppercase">
-                    Current
+              <div className="flex flex-col gap-space-xs lg:w-1/3">
+                <div className="inline-flex w-fit items-center gap-space-xs rounded bg-surface-container-highest px-space-sm py-0.5">
+                  {role.current ? <span className="h-1.5 w-1.5 rounded-full bg-primary" /> : null}
+                  <span className={`font-mono-meta text-mono-meta uppercase ${role.current ? "font-semibold text-primary" : "text-on-surface-variant"}`}>
+                    {badges[role.id] ?? "Role"}
                   </span>
-                ) : null}
+                </div>
+                <h3 className="font-headline-md text-headline-md text-on-surface">{role.role}</h3>
+                <span className="font-mono-metric text-mono-metric text-primary">{role.org}</span>
+                <span className="font-mono-meta text-mono-meta text-outline">
+                  {role.place} • {role.dates}
+                </span>
               </div>
-              <h3 className="mt-2 font-display text-2xl tracking-tight text-ivory sm:text-3xl">{item.role}</h3>
-              <p className="mt-1 text-mist">
-                {item.org}
-                <span className="px-2 text-mist/40">/</span>
-                {item.place}
-              </p>
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-ivory/90">{item.summary}</p>
-              <ul className="mt-4 max-w-3xl space-y-2">
-                {item.points.map((point) => (
-                  <li key={point} className="text-sm leading-relaxed text-mist">
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </motion.li>
+              <div className="flex flex-col gap-space-md lg:w-2/3">
+                <ul className="flex list-none flex-col gap-space-sm font-body-md text-body-md text-on-surface-variant">
+                  {role.points.map((point) => (
+                    <li key={point} className="flex items-start gap-space-sm">
+                      <Icon name="check_circle" className="mt-1 shrink-0 text-[18px] text-primary" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-space-xs pt-space-xs font-mono-meta text-[11px] text-outline">
+                  {(tags[role.id] ?? []).map((tag) => (
+                    <span key={tag} className="rounded bg-surface-container px-2 py-1">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   )

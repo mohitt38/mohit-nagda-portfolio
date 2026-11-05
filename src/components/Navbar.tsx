@@ -1,134 +1,127 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { useEffect, useState } from "react"
-import { contact } from "../config/contact"
-import { navItems, site } from "../config/site"
-import { useScrolled } from "../hooks/useScrolled"
-import { SystemMap } from "./SystemMap"
-import { ThemeToggle } from "./ThemeToggle"
+import { useState } from "react"
+import { site } from "../config/site"
+import { useTheme } from "../theme/ThemeProvider"
+import { Icon } from "./Icon"
 
-export function Navbar({ active }: { active: string }) {
-  const scrolled = useScrolled(24)
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#research", label: "Research" },
+  { href: "#skills", label: "Toolkit" },
+  { href: "#system-map", label: "AI System Map" },
+] as const
+
+export function Navbar() {
+  const { theme, setTheme } = useTheme()
   const [open, setOpen] = useState(false)
-  const reduce = useReducedMotion()
 
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : ""
-    return () => {
-      document.body.style.overflow = ""
+  function pickTheme(next: "dark" | "light" | "system") {
+    if (next === "system") {
+      setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      return
     }
-  }, [open])
+    setTheme(next)
+  }
 
-  useEffect(() => {
-    if (!open) return
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false)
-    }
-    window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
-  }, [open])
+  const themeClass = (active: boolean) =>
+    active
+      ? "rounded bg-surface-bright px-1.5 py-1 text-primary"
+      : "rounded px-1.5 py-1 text-on-surface-variant hover:text-on-surface"
 
   return (
-    <>
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-          scrolled || open ? "border-b border-line bg-ink/90 backdrop-blur-md" : "bg-transparent"
-        }`}
-      >
-      <div className="shell flex h-16 items-center justify-between gap-3">
-        <a href="#home" className="font-display text-sm tracking-[0.18em] text-ivory uppercase">
-          Mohit Nagda
-        </a>
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
-          {navItems.map((item) => (
+    <header className="fixed top-0 right-0 left-0 z-50 bg-surface/85 shadow-[0_1px_8px_rgba(0,0,0,0.45)] backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-space-md px-gutter-mobile lg:px-gutter">
+        <div className="flex shrink-0 items-center gap-space-md">
+          <a href="#home" className="flex items-center gap-space-sm">
+            <span className="flex h-8 w-8 items-center justify-center rounded bg-primary font-mono-metric text-[12px] font-medium text-on-primary">
+              MN
+            </span>
+            <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">
+              Mohit Nagda
+            </span>
+          </a>
+          <div className="hidden items-center gap-space-xs rounded bg-surface-container-high px-space-sm py-0.5 sm:flex">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+            <span className="font-mono-meta text-mono-meta tracking-wider text-on-surface-variant uppercase">
+              Available for roles
+            </span>
+          </div>
+        </div>
+        <nav className="hidden items-center gap-space-lg xl:flex">
+          {links.map((item) => (
             <a
-              key={item.id}
-              href={`#${item.id}`}
-              aria-current={active === item.id ? "page" : undefined}
-              className={`font-display text-[0.78rem] tracking-wide ${
-                active === item.id ? "text-ivory" : "text-mist hover:text-ivory"
-              }`}
+              key={item.href}
+              href={item.href}
+              className="font-label-ui text-label-ui text-on-surface-variant transition-colors hover:text-on-surface"
             >
               {item.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden items-center gap-4 lg:flex">
-            <a
-              href={site.resumePath}
-              download
-              className="font-display text-[0.78rem] tracking-wide text-mist hover:text-ivory"
+        <div className="flex shrink-0 items-center gap-space-sm">
+          <div className="flex items-center rounded bg-surface-container-high p-0.5" role="group" aria-label="Theme">
+            <button type="button" className={themeClass(false)} title="System theme" onClick={() => pickTheme("system")}>
+              <Icon name="desktop_windows" className="text-[15px]" />
+            </button>
+            <button
+              type="button"
+              className={themeClass(theme === "light")}
+              title="Light theme"
+              onClick={() => pickTheme("light")}
             >
-              Resume
-            </a>
-            <a
-              href={contact.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="font-display text-[0.78rem] tracking-wide text-blue"
+              <Icon name="light_mode" className="text-[15px]" />
+            </button>
+            <button
+              type="button"
+              className={themeClass(theme === "dark")}
+              title="Dark theme"
+              onClick={() => pickTheme("dark")}
             >
-              GitHub
-            </a>
+              <Icon name="dark_mode" className="text-[15px]" />
+            </button>
           </div>
-          <ThemeToggle />
+          <a
+            href={site.resumePath}
+            download
+            className="hidden items-center gap-space-xs rounded bg-surface-container px-space-md py-1.5 font-mono-metric text-mono-metric text-on-surface hover:bg-surface-container-high md:inline-flex"
+          >
+            <Icon name="description" className="text-[16px]" />
+            CV
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded bg-primary px-space-md py-1.5 font-mono-metric text-mono-metric font-medium text-on-primary hover:bg-primary-fixed-dim"
+          >
+            Let&apos;s Talk
+          </a>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line-strong text-ivory lg:hidden"
+            className="inline-flex h-8 w-8 items-center justify-center rounded bg-surface-container-high text-on-surface xl:hidden"
             aria-expanded={open}
-            aria-controls="mobile-nav"
+            aria-label="Open menu"
             onClick={() => setOpen((value) => !value)}
           >
-            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <Icon name={open ? "close" : "menu"} />
           </button>
         </div>
       </div>
-        {scrolled ? <SystemMap activeSection={active} variant="rail" /> : null}
-      </header>
-      <AnimatePresence>
-        {open ? (
-          <motion.nav
-            id="mobile-nav"
-            aria-label="Mobile"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={reduce ? undefined : { opacity: 0 }}
-            className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-ink px-6 py-8 lg:hidden"
-          >
-            <ul className="space-y-1">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={() => setOpen(false)}
-                    className="flex min-h-12 items-center font-display text-2xl tracking-tight text-ivory"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 flex flex-wrap gap-4 border-t border-line pt-5 text-sm">
-              <a href={site.resumePath} download className="text-blue">
-                Resume
+      {open ? (
+        <nav className="border-t border-outline-variant/40 bg-surface-container px-gutter-mobile py-space-md xl:hidden">
+          <div className="mx-auto flex max-w-[1280px] flex-col gap-space-sm">
+            {links.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="font-label-ui text-label-ui text-on-surface"
+              >
+                {item.label}
               </a>
-              <a href={contact.emailHref} className="text-mist">
-                Email
-              </a>
-              <a href={contact.whatsappHref} target="_blank" rel="noreferrer noopener" className="text-mist">
-                WhatsApp
-              </a>
-              <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="text-mist">
-                LinkedIn
-              </a>
-              <a href={contact.github} target="_blank" rel="noreferrer noopener" className="text-mist">
-                GitHub
-              </a>
-            </div>
-          </motion.nav>
-        ) : null}
-      </AnimatePresence>
-    </>
+            ))}
+          </div>
+        </nav>
+      ) : null}
+    </header>
   )
 }

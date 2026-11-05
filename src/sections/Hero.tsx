@@ -1,102 +1,140 @@
-import { ArrowUpRight, FileDown, MessageCircle } from "lucide-react"
-import { motion, useReducedMotion } from "framer-motion"
 import { contact } from "../config/contact"
 import { site } from "../config/site"
-import { MagneticButton } from "../components/MagneticButton"
-import { SystemMap } from "../components/SystemMap"
-import { Typewriter } from "../components/Typewriter"
+import { HeroTerminal } from "../components/HeroTerminal"
+import { Icon } from "../components/Icon"
 
-const ease = [0.22, 1, 0.36, 1] as const
-
-export function Hero({ active }: { active: string }) {
-  const reduce = useReducedMotion()
-
-  const enter = (delay: number) =>
-    reduce
-      ? {}
-      : {
-          initial: { opacity: 0, y: 18 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.7, delay, ease },
-        }
-
+export function Hero() {
   return (
-    <section id="home" className="relative pt-20">
-      <div className="shell relative grid items-start gap-6 py-8 pb-4 sm:gap-10 sm:py-14 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-12 lg:py-20">
-        <div>
-          <motion.p {...enter(0.05)} className="font-display text-[0.72rem] tracking-[0.24em] text-blue uppercase">
-            Udaipur · Open to work · Building with AI
-          </motion.p>
-          <h1 className="mt-4 font-display text-[clamp(2.75rem,11vw,7.2rem)] leading-none font-medium tracking-[-0.045em] text-ivory sm:mt-5">
-            {["Mohit", "Nagda"].map((word, index) => (
-              <span key={word} className="block overflow-hidden pb-[0.18em]">
-                <motion.span
-                  className="block leading-[0.9]"
-                  initial={reduce ? false : { y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: reduce ? 0 : 0.85, delay: reduce ? 0 : 0.12 + index * 0.12, ease }}
-                >
-                  {word}
-                </motion.span>
+    <section id="home" className="relative mx-auto w-full max-w-[1280px] overflow-hidden px-gutter-mobile py-space-xl lg:px-gutter lg:py-margin">
+      <div className="relative grid grid-cols-1 items-center gap-space-xl lg:grid-cols-12">
+        <div className="flex flex-col gap-space-lg lg:col-span-7">
+          <div className="flex flex-wrap items-center gap-space-sm">
+            <div className="inline-flex items-center gap-space-xs rounded-full bg-surface-container-high px-space-sm py-1">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+              <span className="font-mono-meta text-mono-meta tracking-wider text-on-surface-variant uppercase">
+                AI Systems Engineer • Researcher
               </span>
-            ))}
-          </h1>
-          <motion.span
-            aria-hidden="true"
-            className="mt-4 block h-px w-24 origin-left bg-blue"
-            initial={reduce ? false : { scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: reduce ? 0 : 0.8, delay: reduce ? 0 : 0.45, ease }}
-          />
-          <motion.p {...enter(0.22)} className="mt-6 font-display text-xl text-ivory sm:text-2xl">
-            {site.positioning}
-          </motion.p>
-          <motion.p {...enter(0.28)} className="mt-1 font-display text-lg text-mist">
-            {site.roles}
-          </motion.p>
-          <motion.p {...enter(0.32)} className="mt-4 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
-            {site.plainPitch}
-          </motion.p>
-          <motion.div {...enter(0.36)} className="mt-6 max-w-xl">
-            <p className="font-display text-[0.65rem] tracking-[0.2em] text-blue uppercase">
-              Available to connect
+            </div>
+            <div className="inline-flex items-center gap-space-xs rounded-full bg-surface-container-low px-space-sm py-1">
+              <Icon name="terminal" className="text-[14px] text-primary" />
+              <span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">
+                Available for hire / roles
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-space-xs">
+            <h1 className="font-display-xl text-[36px] leading-[44px] tracking-tight text-on-surface lg:text-display-xl">
+              Building intelligent systems for the real world.
+            </h1>
+            <p className="mt-space-sm max-w-2xl font-body-lg text-body-lg text-on-surface-variant">
+              I am <strong className="font-semibold text-on-surface">Mohit Nagda</strong>, an AI-focused computer
+              science engineer building practical tools with Generative AI, RAG, NLP, and Python - chatbots,
+              summarizers, meeting helpers, and label readers.
             </p>
-            <p
-              className="mt-2 min-h-[3.75rem] font-display text-base leading-relaxed text-ivory sm:min-h-[4rem] sm:text-lg"
-              aria-live="polite"
+          </div>
+          <HeroTerminal />
+          <div className="grid grid-cols-3 gap-space-sm rounded bg-surface-container-low p-space-md shadow-sm">
+            <div className="flex flex-col">
+              <span className="font-mono-meta text-mono-meta text-outline uppercase">Education</span>
+              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">B.Tech CS (AI)</span>
+              <span className="font-mono-meta text-mono-meta font-semibold text-primary">CGPA 9.0 / 10.0</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-mono-meta text-mono-meta text-outline uppercase">Location</span>
+              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">Udaipur, India</span>
+              <span className="font-mono-meta text-mono-meta text-on-surface-variant">Rajasthan</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-mono-meta text-mono-meta text-outline uppercase">Current role</span>
+              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">Python Dev Intern</span>
+              <span className="font-mono-meta text-mono-meta text-on-surface-variant">Toba Tech Solutions</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-space-md pt-space-xs">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-space-sm rounded bg-primary px-space-lg py-space-sm font-mono-metric text-mono-metric font-medium text-on-primary shadow-md hover:bg-primary-fixed-dim"
             >
-              <Typewriter phrases={site.typeLines} startDelay={350} />
-            </p>
-          </motion.div>
-          <motion.div {...enter(0.46)} className="mt-6 flex flex-wrap gap-3 sm:mt-8">
-            <MagneticButton href="#projects">View My Work</MagneticButton>
-            <MagneticButton href={site.resumePath} variant="ghost" download>
-              <FileDown className="h-4 w-4" aria-hidden="true" />
-              Resume
-            </MagneticButton>
-            <MagneticButton href="#contact" variant="ghost">
+              Explore My Work
+              <Icon name="arrow_downward" className="text-[16px]" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-space-sm rounded bg-surface-container px-space-lg py-space-sm font-mono-metric text-mono-metric text-on-surface hover:bg-surface-container-high"
+            >
               Let&apos;s Connect
-            </MagneticButton>
-            <MagneticButton href={contact.whatsappHref} variant="ghost" external>
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              WhatsApp
-            </MagneticButton>
-            <MagneticButton href={contact.github} variant="ghost" external>
-              GitHub
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </MagneticButton>
-            <MagneticButton href={contact.linkedin} variant="ghost" external>
-              LinkedIn
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </MagneticButton>
-          </motion.div>
+              <Icon name="send" className="text-[16px]" />
+            </a>
+            <a
+              href="#system-map"
+              className="inline-flex items-center gap-space-xs rounded px-space-md py-space-sm font-mono-meta text-mono-meta text-primary hover:text-on-surface"
+            >
+              <Icon name="account_tree" className="text-[14px]" />
+              View Architecture Map →
+            </a>
+            <a
+              href={site.resumePath}
+              download
+              className="inline-flex items-center gap-space-xs rounded px-space-md py-space-sm font-mono-meta text-mono-meta text-on-surface-variant hover:text-primary"
+            >
+              <Icon name="description" className="text-[14px]" />
+              Resume
+            </a>
+          </div>
+          <div className="flex flex-wrap items-center gap-space-lg pt-space-sm font-mono-meta text-mono-meta text-outline">
+            <a href={contact.github} target="_blank" rel="noreferrer noopener" className="flex items-center gap-space-xs hover:text-primary">
+              <Icon name="code" className="text-[14px]" /> github.com/mohitt38
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer noopener" className="flex items-center gap-space-xs hover:text-primary">
+              <Icon name="link" className="text-[14px]" /> linkedin.com/in/mohitnagda
+            </a>
+            <a href={contact.emailHref} className="flex items-center gap-space-xs hover:text-primary">
+              <Icon name="mail" className="text-[14px]" /> {contact.email}
+            </a>
+            <a href={contact.whatsappHref} target="_blank" rel="noreferrer noopener" className="flex items-center gap-space-xs hover:text-primary">
+              <Icon name="chat" className="text-[14px]" /> WhatsApp
+            </a>
+          </div>
         </div>
-        <motion.div {...enter(0.3)} className="relative min-w-0">
-          <p className="mb-2 font-display text-[0.72rem] tracking-[0.2em] text-mist uppercase sm:mb-3">
-            How my work connects
-          </p>
-          <SystemMap activeSection={active} />
-        </motion.div>
+        <div className="relative flex flex-col items-center lg:col-span-5">
+          <div className="pointer-events-none absolute -inset-4 rounded-full bg-primary-container/10 blur-3xl" />
+          <div className="relative flex w-full max-w-[420px] flex-col gap-space-md overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-xl">
+            <div className="flex items-center justify-between pb-space-xs">
+              <div className="flex items-center gap-space-xs">
+                <span className="h-2 w-2 rounded-full bg-primary" />
+                <span className="font-mono-meta text-mono-meta tracking-wider text-on-surface-variant uppercase">
+                  Node // Mohit_Nagda
+                </span>
+              </div>
+              <span className="font-mono-meta text-mono-meta text-outline">Open to work</span>
+            </div>
+            <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg bg-surface-container-lowest">
+              <img
+                alt="Illustrated portrait of Mohit Nagda"
+                src="/mohit-portrait.png"
+                className="h-full w-full object-cover object-top"
+              />
+              <div className="absolute top-2 left-2 rounded bg-surface-container-highest/80 px-space-xs py-0.5 font-mono-meta text-[10px] text-primary backdrop-blur-sm">
+                Spec: Gen-AI / RAG / Python
+              </div>
+              <div className="absolute right-2 bottom-2 rounded bg-surface-container-highest/80 px-space-xs py-0.5 font-mono-meta text-[10px] text-on-surface-variant backdrop-blur-sm">
+                Available for roles
+              </div>
+              <div className="scanline-effect pointer-events-none absolute inset-x-0 z-10 h-16 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 rounded-lg border border-primary/20" />
+            </div>
+            <div className="flex items-center justify-between rounded bg-surface-container p-space-sm font-mono-meta text-mono-meta">
+              <div className="flex flex-col">
+                <span className="text-[10px] text-outline uppercase">Affiliation</span>
+                <span className="font-medium text-on-surface">GITS CS (AI) • 2027</span>
+              </div>
+              <div className="flex flex-col text-right">
+                <span className="text-[10px] text-outline uppercase">Research topic</span>
+                <span className="font-medium text-primary">Clinical SOAP notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

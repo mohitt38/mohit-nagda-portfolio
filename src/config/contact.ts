@@ -8,5 +8,7 @@ export const contact = {
   whatsappHref: "https://wa.me/919601258617",
   location: "Udaipur, Rajasthan, India",
   linkedin: "https://www.linkedin.com/in/mohitnagda/",
+  instagram: "https://www.instagram.com/_.mohiittt__/",
+  x: "https://x.com/mohitt_19",
   github: "https://github.com/mohitt38",
 } as const
