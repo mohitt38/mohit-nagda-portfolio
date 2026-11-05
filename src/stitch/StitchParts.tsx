@@ -799,7 +799,7 @@ export function StitchContactForm() {
         <span className="material-symbols-outlined text-[16px]">send</span>
         <span>{sending ? "Sending..." : "Send message"}</span>
       </button>
-      {sent ? <p className="mt-space-md font-body-sm text-body-sm text-primary">Your mail app is open. Tap Send and it reaches nagdamohit19@gmail.com.</p> : null}
+      {sent ? <p className="mt-space-md font-body-sm text-body-sm text-primary">Message sent. I will reply at the email you entered.</p> : null}
       {formError ? <p className="mt-space-md font-body-sm text-body-sm text-error">{formError}</p> : null}
     </form>
   )

@@ -128,7 +128,7 @@ export function Contact() {
           >
             {sending ? "Sending..." : "Send message"}
           </button>
-          {sent ? <p className="mt-4 font-body-sm text-body-sm text-on-surface">Your mail app is open. Tap Send and it reaches nagdamohit19@gmail.com.</p> : null}
+          {sent ? <p className="mt-4 font-body-sm text-body-sm text-on-surface">Message sent. I will reply at the email you entered.</p> : null}
           {formError ? <p className="mt-4 font-body-sm text-body-sm text-primary">{formError}</p> : null}
         </form>
 
