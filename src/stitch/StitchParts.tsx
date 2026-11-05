@@ -767,8 +767,7 @@ export function StitchContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-xl bg-surface-container-low p-space-lg shadow-md">
-      <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+    <form onSubmit={onSubmit} className="rounded-xl bg-surface-container-low p-space-lg shadow-md" autoComplete="on">
       <div className="flex items-center gap-space-xs">
         <span className="font-mono-meta text-mono-meta font-semibold text-primary">08 // DIRECT BRIEF</span>
         <span className="text-outline">-</span>

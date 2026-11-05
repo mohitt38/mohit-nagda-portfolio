@@ -1,8 +1,6 @@
 import { contact } from "../config/contact"
 
 export async function sendContact(data: FormData) {
-  if (String(data.get("_honey") ?? "").trim()) return
-
   const response = await fetch(`https://sendm8.com/f/${contact.email}`, {
     method: "POST",
     headers: {

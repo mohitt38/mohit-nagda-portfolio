@@ -102,8 +102,7 @@ export function Contact() {
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-lg">
-          <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+        <form onSubmit={onSubmit} className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-lg" autoComplete="on">
           <h3 className="font-headline-md text-headline-md text-on-surface">Send a short brief</h3>
           <p className="mt-2 max-w-xl font-body-md text-body-md text-on-surface-variant">
             Tell me what you need built. I will reply at {contact.email}.
