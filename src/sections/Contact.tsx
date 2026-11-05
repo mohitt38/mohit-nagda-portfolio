@@ -1,5 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
-import { useState } from "react"
+import { useState, type FormEvent } from "react"
 import { MagneticButton } from "../components/MagneticButton"
 import { Reveal } from "../components/Reveal"
 import { Typewriter } from "../components/Typewriter"
@@ -9,6 +9,42 @@ import { faq } from "../data/faq"
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
+  const [formError, setFormError] = useState("")
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    setSending(true)
+    setSent(false)
+    setFormError("")
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          message: data.get("message"),
+          _honey: data.get("_honey"),
+        }),
+      })
+      const body = (await response.json().catch(() => null)) as { error?: string } | null
+      if (!response.ok) {
+        setFormError(body?.error || "Could not send right now. Email me directly instead.")
+        return
+      }
+      form.reset()
+      setSent(true)
+    } catch {
+      setFormError("Could not send right now. Email me directly instead.")
+    } finally {
+      setSending(false)
+    }
+  }
 
   async function copyEmail() {
     try {
@@ -130,14 +166,7 @@ export function Contact() {
             </dl>
           </div>
         </Reveal>
-        <form
-          action={`https://formsubmit.co/${contact.email}`}
-          method="POST"
-          className="mt-8 border border-line p-6 sm:p-8"
-        >
-          <input type="hidden" name="_subject" value="New message from your portfolio" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
+        <form onSubmit={onSubmit} className="mt-8 border border-line p-6 sm:p-8">
           <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
           <h3 className="font-display text-2xl tracking-tight text-ivory">Send a short brief</h3>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-mist">
@@ -186,10 +215,21 @@ export function Contact() {
           </div>
           <button
             type="submit"
-            className="mt-6 inline-flex min-h-11 items-center rounded-full bg-ivory px-5 font-display text-sm text-ink"
+            disabled={sending}
+            className="mt-6 inline-flex min-h-11 items-center rounded-full bg-ivory px-5 font-display text-sm text-ink disabled:opacity-60"
           >
-            Send message
+            {sending ? "Sending..." : "Send message"}
           </button>
+          {sent ? (
+            <p className="mt-4 text-sm text-ivory" role="status">
+              Message sent. I will reply at the email you entered.
+            </p>
+          ) : null}
+          {formError ? (
+            <p className="mt-4 text-sm text-blue" role="alert">
+              {formError}
+            </p>
+          ) : null}
         </form>
       </div>
     </section>
