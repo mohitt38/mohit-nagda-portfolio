@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react"
+import { sendContact } from "../lib/sendContact"
 import { useTheme, type Theme } from "../theme/ThemeProvider"
 
 const navLinks = [
@@ -755,26 +756,11 @@ export function StitchContactForm() {
     setSent(false)
     setFormError("")
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          phone: data.get("phone"),
-          message: data.get("message"),
-          _honey: data.get("_honey"),
-        }),
-      })
-      const body = (await response.json().catch(() => null)) as { error?: string } | null
-      if (!response.ok) {
-        setFormError(body?.error || "Could not send right now. Email me directly instead.")
-        return
-      }
+      await sendContact(data)
       form.reset()
       setSent(true)
-    } catch {
-      setFormError("Could not send right now. Email me directly instead.")
+    } catch (error) {
+      setFormError(error instanceof Error ? error.message : "Could not send right now. Email me directly instead.")
     } finally {
       setSending(false)
     }
