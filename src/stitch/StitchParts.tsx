@@ -14,18 +14,23 @@ export function StitchThemeSwitch() {
   const { theme, setTheme } = useTheme()
 
   function buttonClass(id: Theme) {
-    return `px-1.5 py-1 rounded transition-colors ${
+    return `inline-flex size-8 items-center justify-center rounded transition-colors ${
       theme === id ? "bg-surface-bright text-primary" : "text-on-surface-variant hover:text-on-surface"
     }`
   }
 
   return (
-    <div aria-label="Theme Switcher" className="flex items-center rounded bg-surface-container-high p-0.5" role="group">
-      <button className={buttonClass("light")} onClick={() => setTheme("light")} title="Light Theme" type="button">
-        <span className="material-symbols-outlined text-[15px] leading-none">light_mode</span>
+    <div aria-label="Theme Switcher" className="inline-flex items-center gap-0.5 rounded bg-surface-container-high p-0.5" role="group">
+      <button aria-label="Light theme" className={buttonClass("light")} onClick={() => setTheme("light")} title="Light Theme" type="button">
+        <svg aria-hidden="true" className="size-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
       </button>
-      <button className={buttonClass("dark")} onClick={() => setTheme("dark")} title="Dark Theme" type="button">
-        <span className="material-symbols-outlined text-[15px] leading-none">dark_mode</span>
+      <button aria-label="Dark theme" className={buttonClass("dark")} onClick={() => setTheme("dark")} title="Dark Theme" type="button">
+        <svg aria-hidden="true" className="size-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
+          <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z" />
+        </svg>
       </button>
     </div>
   )
@@ -44,7 +49,7 @@ export function StitchHeader() {
           </a>
           <div className="hidden items-center gap-space-xs rounded bg-surface-container-high px-space-sm py-0.5 lg:flex">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-            <span className="font-mono-meta text-mono-meta tracking-wider text-on-surface-variant uppercase">Available for roles</span>
+            <span className="font-mono-meta text-mono-meta tracking-wider text-on-surface-variant uppercase">Open to AI Engineer roles</span>
           </div>
         </div>
         <nav className="hidden items-center gap-space-lg xl:flex">
@@ -64,7 +69,7 @@ export function StitchHeader() {
             <span>CV</span>
           </a>
           <a
-            className="inline-flex items-center justify-center rounded bg-primary px-space-sm py-1.5 font-mono-metric text-mono-metric font-medium text-on-primary transition-colors hover:bg-primary-fixed-dim sm:px-space-md"
+            className="hidden items-center justify-center rounded bg-primary px-space-sm py-1.5 font-mono-metric text-mono-metric font-medium text-on-primary transition-colors hover:bg-primary-fixed-dim sm:inline-flex sm:px-space-md"
             href="#contact"
           >
             Let's Talk
@@ -99,6 +104,13 @@ export function StitchHeader() {
               onClick={() => setOpen(false)}
             >
               Download CV
+            </a>
+            <a
+              className="rounded bg-primary px-space-sm py-space-sm text-center font-label-ui text-label-ui font-medium text-on-primary sm:hidden"
+              href="#contact"
+              onClick={() => setOpen(false)}
+            >
+              Let's Talk
             </a>
           </div>
         </nav>
@@ -256,7 +268,7 @@ export function StitchTerminal() {
 
   return (
     <div className="flex flex-col gap-space-xs rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-space-sm font-mono-meta shadow-inner">
-      <div className="flex items-center justify-between border-b border-surface-container-high/60 px-1 pb-1.5">
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-b border-surface-container-high/60 px-1 pb-1.5">
         <div className="flex items-center gap-1.5">
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-error/70" />
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-tertiary/70" />
@@ -335,7 +347,7 @@ const mapNodes = [
     meta: "FastAPI • Async Queues",
     title: "SYSTEM BACKENDS & APIS",
     desc: "Asynchronous microservices engineered for real-time model invocation, rate-limited audio transcription queues, and streaming token responses with robust schema validation.",
-    stack: "Python, FastAPI, Flask, Redis, Celery, Docker, Pydantic",
+    stack: "Python, FastAPI, Flask, Pydantic",
     metric: "P99 Latency: < 48ms · Concurrent Workers: 16",
   },
   {
@@ -475,13 +487,104 @@ export function StitchSystemMap() {
 
 const skillFilters = [
   { id: "all", label: "All Tools" },
+  { id: "assist", label: "AI Tools" },
   { id: "genai", label: "Generative AI" },
   { id: "aiml", label: "AI / ML" },
   { id: "backend", label: "Backend & Infra" },
   { id: "cv", label: "Vision / OCR" },
 ]
 
+const toolLogos: Record<string, string[]> = {
+  LangChain: ["langchain"],
+  "Gemini 1.5 API": ["googlegemini"],
+  "Hugging Face": ["huggingface"],
+  "Scikit-learn": ["scikitlearn"],
+  spaCy: ["spacy"],
+  PyTorch: ["pytorch"],
+  "Python (Advanced)": ["python"],
+  FastAPI: ["fastapi"],
+  Flask: ["flask"],
+  Streamlit: ["streamlit"],
+  Pandas: ["pandas"],
+  NumPy: ["numpy"],
+  OpenCV: ["opencv"],
+  "RHCSA (Red Hat Linux)": ["redhat"],
+  "Git & GitHub": ["git", "github"],
+  "Linux Shell Scripting": ["linux"],
+  Cursor: ["cursor"],
+  Claude: ["claude"],
+  ChatGPT: ["chatgpt"],
+}
+
+const stackLogos = [
+  { name: "Cursor", slug: "cursor" },
+  { name: "Claude", slug: "claude" },
+  { name: "ChatGPT", slug: "chatgpt" },
+  { name: "Python", slug: "python" },
+  { name: "FastAPI", slug: "fastapi" },
+  { name: "Flask", slug: "flask" },
+  { name: "LangChain", slug: "langchain" },
+  { name: "Gemini", slug: "googlegemini" },
+  { name: "Hugging Face", slug: "huggingface" },
+  { name: "PyTorch", slug: "pytorch" },
+  { name: "scikit-learn", slug: "scikitlearn" },
+  { name: "spaCy", slug: "spacy" },
+  { name: "Pandas", slug: "pandas" },
+  { name: "NumPy", slug: "numpy" },
+  { name: "Streamlit", slug: "streamlit" },
+  { name: "OpenCV", slug: "opencv" },
+  { name: "Git", slug: "git" },
+  { name: "GitHub", slug: "github" },
+  { name: "Linux", slug: "linux" },
+  { name: "Red Hat", slug: "redhat" },
+]
+
+const inkLogos = new Set(["cursor", "chatgpt", "github"])
+
+export function StitchStackLine() {
+  const row = [...stackLogos, ...stackLogos]
+
+  return (
+    <div className="flex w-full items-center gap-space-md overflow-hidden border-y border-outline/15 py-space-sm">
+      <span className="shrink-0 pl-gutter-mobile font-mono-meta text-mono-meta text-outline uppercase lg:pl-gutter">Stack</span>
+      <div className="min-w-0 flex-1 overflow-hidden">
+        <ul className="stack-run">
+          {row.map((logo, index) => (
+            <li key={`${logo.slug}-${index}`} className="shrink-0" title={logo.name}>
+              <img
+                alt=""
+                className={`h-7 w-7 ${inkLogos.has(logo.slug) ? "stack-ink" : ""}`}
+                src={`/icons/${logo.slug}.svg`}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+function ToolMark({ slug }: { slug: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-block h-3.5 w-3.5 shrink-0 bg-current"
+      style={{
+        WebkitMask: `url(/icons/${slug}.svg) center / contain no-repeat`,
+        mask: `url(/icons/${slug}.svg) center / contain no-repeat`,
+      }}
+    />
+  )
+}
+
 const skillGroups = [
+  {
+    category: "assist",
+    icon: "smart_toy",
+    title: "AI Tools I Work In",
+    count: "03 TOOLS",
+    items: ["Cursor", "Claude", "ChatGPT"],
+  },
   {
     category: "genai",
     icon: "neurology",
@@ -576,7 +679,10 @@ export function StitchSkills() {
                 </div>
                 <div className="flex flex-wrap gap-space-xs font-mono-meta text-[12px]">
                   {group.items.map((item) => (
-                    <span key={item} className="rounded bg-surface-container px-2.5 py-1 text-on-surface">
+                    <span key={item} className="inline-flex items-center gap-1.5 rounded bg-surface-container px-2.5 py-1 text-on-surface">
+                      {(toolLogos[item] ?? []).map((slug) => (
+                        <ToolMark key={slug} slug={slug} />
+                      ))}
                       {item}
                     </span>
                   ))}

@@ -46,7 +46,7 @@ export function Hero() {
             </div>
             <div className="flex flex-col">
               <span className="font-mono-meta text-mono-meta text-outline uppercase">Current role</span>
-              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">Python Dev Intern</span>
+              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">Python Dev</span>
               <span className="font-mono-meta text-mono-meta text-on-surface-variant">Toba Tech Solutions</span>
             </div>
           </div>

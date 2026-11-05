@@ -284,6 +284,27 @@ html.light {
   }
 }
 
+@keyframes stackRun {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.stack-run {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 2.25rem;
+  animation: stackRun 32s linear infinite;
+}
+
+html.dark .stack-ink {
+  filter: invert(1);
+}
+
 @keyframes gridPan {
   to {
     background-position: 28px 28px;

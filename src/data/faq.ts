@@ -18,11 +18,11 @@ export const faq: FaqItem[] = [
   {
     question: "Is Mohit Nagda open to work or collaboration?",
     answer:
-      "Yes. Open to full-time AI and Python roles, freelance projects, research collaboration, and internship conversations.",
+      "Yes. Available for AI and software roles, freelance projects, research collaboration, and internship conversations. Based in Udaipur, and open to remote work or relocation.",
   },
   {
     question: "Where is Mohit Nagda based?",
-    answer: "Udaipur, Rajasthan, India.",
+    answer: "Based in Udaipur, Rajasthan, India. Open to remote work or relocation.",
   },
   {
     question: "Where can I find Mohit Nagda online?",

@@ -14,7 +14,7 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
 | --- | --- |
 | Name | Mohit Nagda |
 | Role | AI Engineer / Python developer |
-| Location | Udaipur, Rajasthan, India |
+| Location | Udaipur, Rajasthan, India. Open to remote work or relocation |
 | Education | B.Tech Computer Science (AI specialization), Geetanjali Institute of Technical Studies (2023-2027), CGPA 9.0/10 |
 | Standing | Final-year student |
 | Current role | Python Developer Intern, Toba Tech Solutions (July 2026 - November 2026) |

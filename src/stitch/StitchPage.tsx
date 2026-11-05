@@ -1,4 +1,4 @@
-import { SocialGlyph, StitchContactForm, StitchCopyEmail, StitchHeader, StitchSkills, StitchSystemMap, StitchTerminal } from "./StitchParts"
+import { SocialGlyph, StitchContactForm, StitchCopyEmail, StitchHeader, StitchSkills, StitchStackLine, StitchSystemMap, StitchTerminal } from "./StitchParts"
 
 export function StitchPage() {
   return (
@@ -33,7 +33,7 @@ export function StitchPage() {
 </div>
 <div className="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low">
 <span className="material-symbols-outlined text-primary text-[14px]">terminal</span>
-<span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">AVAILABLE FOR HIRE / ROLES</span>
+<span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">Open to AI Engineer roles</span>
 </div>
 </div>
 {/* Hero Headline */}
@@ -42,7 +42,7 @@ export function StitchPage() {
             Building intelligent systems for the real world.
           </h1>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-sm">
-            I am <strong className="text-on-surface font-semibold">Mohit Nagda</strong>, an AI-focused computer science engineer architecting production LLM pipelines, RAG retrieval frameworks, clinical NLP systems, and robust Python backend infrastructure.
+            I am <strong className="text-on-surface font-semibold">Mohit Nagda</strong>, an AI-native developer and a vibe coder. I build production LLM pipelines, RAG retrieval frameworks, clinical NLP systems, and Python backends.
           </p>
 </div>
 <StitchTerminal />
@@ -56,11 +56,11 @@ export function StitchPage() {
 <div className="flex flex-col">
 <span className="font-mono-meta text-mono-meta text-outline uppercase">LOCATION</span>
 <span className="font-mono-metric text-mono-metric text-on-surface font-medium">Udaipur, India</span>
-<span className="font-mono-meta text-mono-meta text-on-surface-variant">24.5854° N, 73.7125° E</span>
+<span className="font-mono-meta text-mono-meta text-primary font-semibold">Remote or relocate</span>
 </div>
 <div className="flex flex-col">
 <span className="font-mono-meta text-mono-meta text-outline uppercase">CURRENT ROLE</span>
-<span className="font-mono-metric text-mono-metric text-on-surface font-medium">Python Dev Intern</span>
+<span className="font-mono-metric text-mono-metric text-on-surface font-medium">Python Dev</span>
 <span className="font-mono-meta text-mono-meta text-on-surface-variant">Toba Tech Solutions</span>
 </div>
 </div>
@@ -80,7 +80,7 @@ export function StitchPage() {
 </a>
 </div>
 {/* Social Handles Strip */}
-<div className="flex flex-wrap items-center gap-space-md pt-space-sm font-mono-meta text-mono-meta text-outline sm:gap-space-lg">
+<div className="flex flex-wrap items-center gap-space-md pt-space-sm font-mono-meta text-mono-meta text-on-surface sm:gap-space-lg">
 <a className="flex items-center gap-space-xs transition-colors hover:text-primary" href="https://github.com/mohitt38" rel="noopener noreferrer" target="_blank">
 <span className="material-symbols-outlined text-[14px]">code</span> github.com/mohitt38
           </a>
@@ -107,19 +107,17 @@ export function StitchPage() {
 <div className="flex items-center justify-between pb-space-xs">
 <div className="flex items-center gap-space-xs">
 <span className="w-2 h-2 rounded-full bg-primary"></span>
-<span className="font-mono-meta text-mono-meta uppercase tracking-wider text-on-surface-variant">NODE // MOHIT_NAGDA</span>
+<span className="font-mono-meta text-mono-meta uppercase tracking-wider text-on-surface-variant">SPEC: GEN-AI / RAG / PYTHON</span>
 </div>
-<span className="font-mono-meta text-mono-meta text-outline">SYS.ID: 4092-AI</span>
+<span className="font-mono-meta text-mono-meta text-primary">SYS.ID: NAGDA.EXE</span>
 </div>
 {/* Developer Avatar Frame */}
 <div className="relative w-full aspect-square rounded-lg bg-surface-container-lowest flex items-center justify-center overflow-hidden">
 <img alt="Mohit Nagda - AI Systems Engineer" className="w-full h-full object-cover object-center filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]" src="/stitch-portrait.jpg"/>
 {/* Corner Telemetry Overlay Ticks */}
-<div className="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-sm font-mono-meta text-[10px] text-primary">
-              SPEC: GEN-AI / RAG / PYTHON
-            </div>
-<div className="absolute bottom-2 right-2 px-space-xs py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-sm font-mono-meta text-[10px] text-on-surface-variant">
-              INFERENCE READY • 99.8% STABLE
+<div className="absolute bottom-2 right-2 z-20 max-w-[calc(100%-1rem)] rounded bg-[#0c0e11]/95 px-space-xs py-1 text-right font-mono-meta text-[10px] leading-snug text-[#e2e2e6] shadow-sm">
+              OPEN TO ROLES<br />
+              <span className="font-semibold text-[#adc6ff]">UDAIPUR • REMOTE • RELOCATE</span>
             </div>
 <div className="scanline-effect absolute inset-x-0 h-16 bg-gradient-to-b from-transparent via-primary/20 to-transparent pointer-events-none z-10"></div><div className="absolute inset-0 pointer-events-none border border-primary/20 rounded-lg"></div></div>
 {/* Bottom Micro Telemetry Metrics */}
@@ -129,14 +127,15 @@ export function StitchPage() {
 <span className="text-on-surface font-medium">GITS CS (AI) • 2027</span>
 </div>
 <div className="flex flex-col text-right">
-<span className="text-outline uppercase text-[10px]">RESEARCH TOPIC</span>
-<span className="text-primary font-medium">Clinical SOAP Automation</span>
+<span className="text-outline uppercase text-[10px]">CURRENT ROLE</span>
+<span className="text-primary font-medium">Python Dev</span>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+<StitchStackLine />
 {/* 01 // ABOUT SECTION */}
 <section className="w-full bg-surface-container-lowest py-space-xl lg:py-margin" id="about">
 <div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-space-xl">
@@ -206,13 +205,13 @@ export function StitchPage() {
 </div>
 <h3 className="font-headline-md text-headline-md text-on-surface">Production Engineering</h3>
 <p className="font-body-md text-body-md text-on-surface-variant">
-              Developing resilient Python services with FastAPI and Flask. Architecting automated script-to-content generation pipelines, message queues, and streaming API endpoints.
+              Developing resilient Python services with FastAPI and Flask. Architecting automated script-to-content generation pipelines and streaming API endpoints.
             </p>
 </div>
 <div className="flex flex-wrap gap-space-xs font-mono-meta text-[11px] text-outline pt-space-xs">
 <span className="px-2 py-0.5 rounded bg-surface-container-highest">FastAPI</span>
-<span className="px-2 py-0.5 rounded bg-surface-container-highest">Celery</span>
-<span className="px-2 py-0.5 rounded bg-surface-container-highest">Docker</span>
+<span className="px-2 py-0.5 rounded bg-surface-container-highest">Flask</span>
+<span className="px-2 py-0.5 rounded bg-surface-container-highest">Python</span>
 </div>
 </div>
 {/* Block 03: Research */}
@@ -281,7 +280,6 @@ export function StitchPage() {
 <span className="px-2 py-1 rounded bg-surface-container">FastAPI</span>
 <span className="px-2 py-1 rounded bg-surface-container">ContentX</span>
 <span className="px-2 py-1 rounded bg-surface-container">AI Image Pipelines</span>
-<span className="px-2 py-1 rounded bg-surface-container">Celery</span>
 </div>
 </div>
 </div>
@@ -816,8 +814,9 @@ export function StitchPage() {
 <span className="flex min-w-0 flex-1 items-center gap-space-xs text-on-surface-variant"><SocialGlyph name="x" /><span className="min-w-0 break-all">x.com/mohitt_19</span></span>
 <span className="material-symbols-outlined shrink-0 text-[16px] text-primary">arrow_outward</span>
 </a>
-<div className="flex flex-col gap-1 rounded bg-surface-container p-space-sm sm:flex-row sm:items-center sm:justify-between">
-<span className="text-on-surface-variant">Udaipur, Rajasthan, India</span>
+<div className="flex flex-col gap-1 rounded bg-surface-container p-space-sm">
+<span className="text-on-surface">Udaipur, Rajasthan, India</span>
+<span className="font-mono-meta text-[11px] text-primary">Remote or relocate</span>
 <span className="font-mono-meta text-[11px] text-outline">IST (UTC+5:30)</span>
 </div>
 </div>
