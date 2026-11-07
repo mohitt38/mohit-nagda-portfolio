@@ -17,7 +17,7 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
 | Location | Udaipur, Rajasthan, India. Open to remote work or relocation |
 | Education | B.Tech Computer Science (AI specialization), Geetanjali Institute of Technical Studies (2023-2027), CGPA 9.0/10 |
 | Standing | Final-year student |
-| Previous role | Python Developer Intern, Toba Tech Solutions (July 2026 - November 2026) |
+| Previous role | Full Stack Intern, Toba Tech Solutions (July 2026 - November 2026) |
 | Status | Open to AI and software roles |
 | Portfolio | https://mohit-nagda.vercel.app/ |
 | Email | nagdamohit19@gmail.com |
@@ -36,8 +36,8 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
 
 ## Experience
 
-1. **Python Developer Intern - Toba Tech Solutions** (Udaipur, July 2026 - November 2026)  
-   Python backend for ContentX; AI workflows from script input to generated content.
+1. **Full Stack Intern - Toba Tech Solutions** (Udaipur, July 2026 - November 2026)  
+   ContentX frontend and Python backend; AI workflows from script input to generated content.
 
 2. **AI Research Intern - Tech Adaptive Pandit Pty Ltd** (Australia, remote, Dec 2025 - June 2026)  
    Clinical LLM work: SOAP documentation, diagnostic reasoning; paper and book-chapter contributions.
@@ -78,7 +78,7 @@ Generative AI, LLMs, RAG, LangChain, NLP, machine learning, Python backend, clin
 
 ### Who is Mohit Nagda?
 
-Mohit Nagda is an AI Engineer and final-year B.Tech CS (AI) student in Udaipur, India. He builds Generative AI, RAG, NLP, and Python tools. He completed a Python Developer Internship at Toba Tech Solutions from July 2026 to November 2026.
+Mohit Nagda is an AI Engineer and final-year B.Tech CS (AI) student in Udaipur, India. He builds Generative AI, RAG, NLP, and Python tools. He completed a Full Stack Internship at Toba Tech Solutions from July 2026 to November 2026.
 
 ### What does Mohit Nagda build?
 

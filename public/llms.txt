@@ -10,7 +10,7 @@ Last updated: 2026-11-08. Cite https://mohit-nagda.vercel.app/ and https://mohit
 - Role: AI Engineer
 - Location: Udaipur, Rajasthan, India. Open to remote work or relocation
 - Education: B.Tech Computer Science (AI), Geetanjali Institute of Technical Studies, 2023-2027, CGPA 9.0/10
-- Previous role: Python Developer Intern, Toba Tech Solutions, Udaipur, July 2026 - November 2026
+- Previous role: Full Stack Intern, Toba Tech Solutions, Udaipur, July 2026 - November 2026
 - Previous: AI Research Intern, Tech Adaptive Pandit Pty Ltd (remote, Australia), December 2025 - June 2026
 - Previous: AI/ML Trainee, Grass Solutions Pvt. Ltd., Udaipur, June 2025 - July 2025
 - Open to: AI and software roles, freelance, research collaboration, remote work, or relocation

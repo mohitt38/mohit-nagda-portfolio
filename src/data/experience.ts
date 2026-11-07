@@ -12,14 +12,14 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     id: "toba",
-    role: "Python Developer Intern",
+    role: "Full Stack Intern",
     org: "Toba Tech Solutions",
     place: "Udaipur",
     dates: "July 2026 - November 2026",
     summary:
-      "Built the Python backend for ContentX, and AI generation workflows that move from a script to finished content.",
+      "Built frontend and Python backend for ContentX, plus AI generation workflows from script input to finished content.",
     points: [
-      "Built the Python backend and contributed to feature implementation.",
+      "Shipped ContentX UI and Python backend features end to end.",
       "Worked on AI-based image generation features.",
       "Worked on generation workflows from script input through to content output.",
       "Collaborated with the team to improve and maintain those content-generation workflows.",

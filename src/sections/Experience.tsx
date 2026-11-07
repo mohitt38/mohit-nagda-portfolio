@@ -2,13 +2,13 @@ import { Icon } from "../components/Icon"
 import { experience } from "../data/experience"
 
 const tags: Record<string, string[]> = {
-  toba: ["Python", "ContentX", "AI workflows", "Backend"],
+  toba: ["Frontend", "Python", "ContentX", "AI workflows"],
   tap: ["Clinical NLP", "SOAP notes", "LLMs", "Research"],
   grass: ["scikit-learn", "Pandas", "NumPy", "TensorFlow"],
 }
 
 const badges: Record<string, string> = {
-  toba: "Python internship",
+  toba: "Full stack internship",
   tap: "Research internship",
   grass: "ML internship",
 }

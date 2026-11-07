@@ -253,9 +253,9 @@ export function StitchPage() {
 <div className="p-space-lg rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col lg:flex-row gap-space-lg justify-between shadow-sm">
 <div className="lg:w-1/3 flex flex-col gap-space-xs">
 <div className="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-highest w-fit">
-<span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">PYTHON INTERNSHIP</span>
+<span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">FULL STACK INTERNSHIP</span>
 </div>
-<h3 className="font-headline-md text-headline-md text-on-surface">Python Developer Intern</h3>
+<h3 className="font-headline-md text-headline-md text-on-surface">Full Stack Intern</h3>
 <span className="font-mono-metric text-mono-metric text-primary">Toba Tech Solutions</span>
 <span className="font-mono-meta text-mono-meta text-outline">Udaipur, Rajasthan • July 2026 - November 2026</span>
 </div>
@@ -275,6 +275,7 @@ export function StitchPage() {
 </li>
 </ul>
 <div className="flex flex-wrap gap-space-xs font-mono-meta text-[11px] text-outline pt-space-xs">
+<span className="px-2 py-1 rounded bg-surface-container">Frontend</span>
 <span className="px-2 py-1 rounded bg-surface-container">Python</span>
 <span className="px-2 py-1 rounded bg-surface-container">FastAPI</span>
 <span className="px-2 py-1 rounded bg-surface-container">ContentX</span>

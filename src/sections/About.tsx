@@ -52,9 +52,10 @@ export function About() {
               {` ${site.plainPitch}`}
             </p>
             <p>
-              Most recently I was a Python Developer Intern at Toba Tech Solutions (July 2026 - November 2026), working
-              on the ContentX backend and AI workflows from a script to generated content. Before that I researched
-              clinical documentation, and earlier I built machine-learning pipelines from raw data through evaluation.
+              Most recently I was a Full Stack Intern at Toba Tech Solutions (July 2026 - November 2026), working on
+              ContentX frontend and backend plus AI workflows from a script to generated content. Before that I
+              researched clinical documentation, and earlier I built machine-learning pipelines from raw data through
+              evaluation.
             </p>
           </div>
           <div className="flex w-full flex-col gap-space-sm md:w-1/3">

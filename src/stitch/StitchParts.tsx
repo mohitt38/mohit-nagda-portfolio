@@ -48,10 +48,6 @@ export function StitchHeader() {
             <img alt="Mohit Nagda logo" className="h-8 w-8 shrink-0 rounded-md object-cover" src="/favicon.jpg" />
             <span className="truncate font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">Mohit Nagda</span>
           </a>
-          <div className="hidden items-center gap-space-xs rounded bg-surface-container-high px-space-sm py-0.5 lg:flex">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-            <span className="font-mono-meta text-mono-meta tracking-wider text-on-surface-variant uppercase">Open to AI Engineer roles</span>
-          </div>
         </div>
         <nav className="hidden items-center gap-space-lg xl:flex">
           {navLinks.map((link) => (
