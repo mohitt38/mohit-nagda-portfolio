@@ -53,7 +53,7 @@ const nodes = [
     title: "Backend",
     meta: "Python services",
     heading: "Python backends",
-    desc: "ContentX workflows at Toba Tech, plus Flask and Streamlit interfaces for the projects.",
+    desc: "ContentX workflows built at Toba Tech, plus Flask and Streamlit interfaces for the projects.",
     stack: "Python, Flask, Streamlit",
   },
 ] as const

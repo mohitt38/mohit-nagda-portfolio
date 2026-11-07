@@ -16,14 +16,13 @@ export const experience: ExperienceItem[] = [
     org: "Toba Tech Solutions",
     place: "Udaipur",
     dates: "July 2026 - November 2026",
-    current: true,
     summary:
-      "Working on the Python backend for ContentX, and on AI generation workflows that move from a script to finished content.",
+      "Built the Python backend for ContentX, and AI generation workflows that move from a script to finished content.",
     points: [
-      "Developing the Python backend and contributing to feature implementation.",
+      "Built the Python backend and contributed to feature implementation.",
       "Worked on AI-based image generation features.",
       "Worked on generation workflows from script input through to content output.",
-      "Collaborating with the team to improve and maintain those content-generation workflows.",
+      "Collaborated with the team to improve and maintain those content-generation workflows.",
     ],
   },
   {

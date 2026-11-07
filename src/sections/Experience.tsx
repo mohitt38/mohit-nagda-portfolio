@@ -8,7 +8,7 @@ const tags: Record<string, string[]> = {
 }
 
 const badges: Record<string, string> = {
-  toba: "Current appointment",
+  toba: "Python internship",
   tap: "Research internship",
   grass: "ML internship",
 }

@@ -59,9 +59,9 @@ export function StitchPage() {
 <span className="font-mono-meta text-mono-meta text-primary font-semibold">Remote or relocate</span>
 </div>
 <div className="flex flex-col">
-<span className="font-mono-meta text-mono-meta text-outline uppercase">CURRENT ROLE</span>
-<span className="font-mono-metric text-mono-metric text-on-surface font-medium">Python Dev</span>
-<span className="font-mono-meta text-mono-meta text-on-surface-variant">Toba Tech Solutions</span>
+<span className="font-mono-meta text-mono-meta text-outline uppercase">STATUS</span>
+<span className="font-mono-metric text-mono-metric text-on-surface font-medium">Open to roles</span>
+<span className="font-mono-meta text-mono-meta text-on-surface-variant">AI Engineer</span>
 </div>
 </div>
 {/* Action Matrix */}
@@ -127,8 +127,8 @@ export function StitchPage() {
 <span className="text-on-surface font-medium">GITS CS (AI) • 2027</span>
 </div>
 <div className="flex flex-col text-right">
-<span className="text-outline uppercase text-[10px]">CURRENT ROLE</span>
-<span className="text-primary font-medium">Python Dev</span>
+<span className="text-outline uppercase text-[10px]">STATUS</span>
+<span className="text-primary font-medium">Open to roles</span>
 </div>
 </div>
 </div>
@@ -253,8 +253,7 @@ export function StitchPage() {
 <div className="p-space-lg rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col lg:flex-row gap-space-lg justify-between shadow-sm">
 <div className="lg:w-1/3 flex flex-col gap-space-xs">
 <div className="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-highest w-fit">
-<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-<span className="font-mono-meta text-mono-meta text-primary uppercase font-semibold">CURRENT APPOINTMENT</span>
+<span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">PYTHON INTERNSHIP</span>
 </div>
 <h3 className="font-headline-md text-headline-md text-on-surface">Python Developer Intern</h3>
 <span className="font-mono-metric text-mono-metric text-primary">Toba Tech Solutions</span>

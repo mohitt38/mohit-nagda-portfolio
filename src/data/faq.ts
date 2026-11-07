@@ -8,7 +8,7 @@ export const faq: FaqItem[] = [
   {
     question: "Who is Mohit Nagda?",
     answer:
-      "Mohit Nagda is an AI Engineer and final-year B.Tech Computer Science student (AI specialization) in Udaipur, India. He builds Generative AI, RAG, NLP, and Python tools and works as a Python Developer Intern at Toba Tech Solutions.",
+      "Mohit Nagda is an AI Engineer and final-year B.Tech Computer Science student (AI specialization) in Udaipur, India. He builds Generative AI, RAG, NLP, and Python tools. He completed a Python Developer Internship at Toba Tech Solutions from July 2026 to November 2026.",
   },
   {
     question: "What does Mohit Nagda build?",

@@ -1,6 +1,6 @@
 # Mohit Nagda - AI Engineer
 
-Last updated: 2026-11-05. This file is the canonical fact sheet for Mohit Nagda. Portfolio: https://mohit-nagda.vercel.app/
+Last updated: 2026-11-08. This file is the canonical fact sheet for Mohit Nagda. Portfolio: https://mohit-nagda.vercel.app/
 
 ## Summary
 
@@ -17,7 +17,8 @@ Mohit Nagda is an AI Engineer based in Udaipur, Rajasthan, India. He builds prac
 | Location | Udaipur, Rajasthan, India. Open to remote work or relocation |
 | Education | B.Tech Computer Science (AI specialization), Geetanjali Institute of Technical Studies (2023-2027), CGPA 9.0/10 |
 | Standing | Final-year student |
-| Current role | Python Developer Intern, Toba Tech Solutions (July 2026 - November 2026) |
+| Previous role | Python Developer Intern, Toba Tech Solutions (July 2026 - November 2026) |
+| Status | Open to AI and software roles |
 | Portfolio | https://mohit-nagda.vercel.app/ |
 | Email | nagdamohit19@gmail.com |
 | Phone / WhatsApp | +91 96012 58617 |
@@ -77,7 +78,7 @@ Generative AI, LLMs, RAG, LangChain, NLP, machine learning, Python backend, clin
 
 ### Who is Mohit Nagda?
 
-Mohit Nagda is an AI Engineer and final-year B.Tech CS (AI) student in Udaipur, India. He builds Generative AI, RAG, NLP, and Python tools and is currently a Python Developer Intern at Toba Tech Solutions.
+Mohit Nagda is an AI Engineer and final-year B.Tech CS (AI) student in Udaipur, India. He builds Generative AI, RAG, NLP, and Python tools. He completed a Python Developer Internship at Toba Tech Solutions from July 2026 to November 2026.
 
 ### What does Mohit Nagda build?
 

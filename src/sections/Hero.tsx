@@ -45,9 +45,9 @@ export function Hero() {
               <span className="font-mono-meta text-mono-meta text-on-surface-variant">Rajasthan</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono-meta text-mono-meta text-outline uppercase">Current role</span>
-              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">Python Dev</span>
-              <span className="font-mono-meta text-mono-meta text-on-surface-variant">Toba Tech Solutions</span>
+              <span className="font-mono-meta text-mono-meta text-outline uppercase">Status</span>
+              <span className="font-mono-metric text-mono-metric font-medium text-on-surface">Open to roles</span>
+              <span className="font-mono-meta text-mono-meta text-on-surface-variant">AI Engineer</span>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-space-md pt-space-xs">
