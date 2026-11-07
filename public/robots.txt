@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Answer engines may read the canonical facts
+# Answer engines and AI crawlers may read the canonical facts
 User-agent: GPTBot
 Allow: /
 
@@ -26,7 +26,21 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 # https://mohit-nagda.vercel.app/llms.txt
+# https://mohit-nagda.vercel.app/llms-full.txt
 # https://mohit-nagda.vercel.app/profile.md
+# https://mohit-nagda.vercel.app/#faq
 
 Sitemap: https://mohit-nagda.vercel.app/sitemap.xml

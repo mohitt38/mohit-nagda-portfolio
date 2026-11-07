@@ -24,12 +24,16 @@ export function Hero() {
           </div>
           <div className="flex flex-col gap-space-xs">
             <h1 className="font-display-xl text-[36px] leading-[44px] tracking-tight text-on-surface lg:text-display-xl">
-              Building intelligent systems for the real world.
+              Mohit Nagda
             </h1>
+            <p className="mt-space-xs font-headline-md text-headline-md text-primary">
+              Real code. Vibe speed. Zero shortcuts.
+            </p>
             <p className="mt-space-sm max-w-2xl font-body-lg text-body-lg text-on-surface-variant">
-              I am <strong className="font-semibold text-on-surface">Mohit Nagda</strong>, an AI-focused computer
-              science engineer building practical tools with Generative AI, RAG, NLP, and Python - chatbots,
-              summarizers, meeting helpers, and label readers.
+              I am <strong className="font-semibold text-on-surface">Mohit Nagda</strong> - a strong AI engineer from
+              Udaipur first, and a vibe coder who covers the whole stack without cutting corners. Production LLM
+              pipelines, RAG, clinical NLP, and Python backends - plus chatbots, summarizers, meeting helpers, and OCR.
+              No half-built demos.
             </p>
           </div>
           <HeroTerminal />

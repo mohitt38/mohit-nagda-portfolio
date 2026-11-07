@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#research", label: "Research" },
   { href: "#skills", label: "Toolkit" },
   { href: "#system-map", label: "AI System Map" },
+  { href: "#faq", label: "Answers" },
 ]
 
 export function StitchThemeSwitch() {
@@ -140,11 +141,11 @@ export function SocialGlyph({ name }: { name: "linkedin" | "instagram" | "x" }) 
 }
 
 const welcomeLines = [
-  "I'm Mohit curious by nature, an engineer by mindset, and always building what's next",
-  "I'm a developer driven by curiosity and innovation.",
-  "I'm constantly learning, experimenting and building.",
-  "I'm exploring the possibilities of AI through real-world projects.",
-  "I'm building my journey at the intersection of AI and engineering.",
+  "I'm Mohit Nagda - strong coder first, vibe coding with full coverage.",
+  "Mohit Nagda: speed from vibes, depth from real engineering.",
+  "LLM pipelines, RAG, clinical NLP, Python - end to end.",
+  "No half-built demos. No missing pieces. Ships clean.",
+  "Chatbots, summarizers, OCR, RAG - complete systems by Mohit Nagda.",
 ]
 
 const commandResponses: Record<string, string> = {

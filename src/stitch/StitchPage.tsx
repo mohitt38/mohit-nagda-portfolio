@@ -1,3 +1,4 @@
+import { faq } from "../data/faq"
 import { SocialGlyph, StitchContactForm, StitchCopyEmail, StitchHeader, StitchSkills, StitchStackLine, StitchSystemMap, StitchTerminal } from "./StitchParts"
 
 export function StitchPage() {
@@ -29,7 +30,7 @@ export function StitchPage() {
 <div className="flex flex-wrap items-center gap-space-sm">
 <div className="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high">
 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-<span className="font-mono-meta text-mono-meta tracking-wider uppercase text-on-surface-variant">AI SYSTEMS ENGINEER • RESEARCHER</span>
+<span className="font-mono-meta text-mono-meta tracking-wider uppercase text-on-surface-variant">STRONG CODER • VIBE WITH DEPTH</span>
 </div>
 <div className="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low">
 <span className="material-symbols-outlined text-primary text-[14px]">terminal</span>
@@ -39,10 +40,13 @@ export function StitchPage() {
 {/* Hero Headline */}
 <div className="flex flex-col gap-space-xs">
 <h1 className="font-display-xl text-[32px] leading-[40px] tracking-tight text-on-surface sm:text-display-xl">
-            Building intelligent systems for the real world.
+            Mohit Nagda
           </h1>
+<p className="font-headline-md text-headline-md text-primary mt-space-xs">
+            Real code. Vibe speed. Zero shortcuts.
+          </p>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-sm">
-            I am <strong className="text-on-surface font-semibold">Mohit Nagda</strong>, an AI-native developer and a vibe coder. I build production LLM pipelines, RAG retrieval frameworks, clinical NLP systems, and Python backends.
+            I am <strong className="text-on-surface font-semibold">Mohit Nagda</strong> - a strong AI engineer from Udaipur first, and a vibe coder who covers the whole stack without cutting corners. Speed from vibes, depth from real engineering: production LLM pipelines, RAG that retrieves with receipts, clinical NLP for notes that matter, and Python backends that stay up - no half-built demos, no missing pieces. Then the tools people actually use: multilingual farming chatbots, document summarizers, meeting-to-task flows, and OCR that reads the label.
           </p>
 </div>
 <StitchTerminal />
@@ -765,7 +769,31 @@ export function StitchPage() {
 </div>
 </div>
 </section>
-{/* 07 // CONTACT & ACTION PORTAL */}
+{/* 07 // QUICK ANSWERS (AEO / GEO) */}
+<section className="w-full bg-surface-container-lowest py-space-xl lg:py-margin" id="faq" aria-labelledby="faq-heading">
+<div className="mx-auto flex max-w-[1280px] flex-col gap-space-xl px-gutter-mobile lg:px-gutter">
+<div className="flex flex-col gap-space-xs">
+<div className="flex items-center gap-space-xs">
+<span className="font-mono-meta text-mono-meta font-semibold text-primary">07 // QUICK ANSWERS</span>
+<span className="text-outline">-</span>
+<span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">Facts for people and answer engines</span>
+</div>
+<h2 id="faq-heading" className="font-headline-lg text-headline-lg text-on-surface">Straight answers about Mohit Nagda.</h2>
+<p className="max-w-2xl font-body-md text-body-md text-on-surface-variant">
+Short, citeable facts. The same answers live in the page schema, <a className="text-primary hover:underline" href="/llms.txt">/llms.txt</a>, <a className="text-primary hover:underline" href="/llms-full.txt">/llms-full.txt</a>, and <a className="text-primary hover:underline" href="/profile.md">/profile.md</a>.
+</p>
+</div>
+<dl className="grid gap-space-md md:grid-cols-2">
+{faq.map((item) => (
+<div key={item.question} className="rounded-lg bg-surface-container-low p-space-lg shadow-sm">
+<dt className="font-headline-sm text-headline-sm text-on-surface">{item.question}</dt>
+<dd className="mt-space-sm font-body-md text-body-md text-on-surface-variant">{item.answer}</dd>
+</div>
+))}
+</dl>
+</div>
+</section>
+{/* 08 // CONTACT & ACTION PORTAL */}
 <section className="w-full py-space-xl lg:py-margin" id="contact">
 <div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter flex flex-col gap-space-xl">
 <div className="p-space-xl lg:p-margin rounded-2xl bg-surface-container flex flex-col lg:flex-row gap-space-xl justify-between items-start shadow-xl relative overflow-hidden">
@@ -773,7 +801,7 @@ export function StitchPage() {
 <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 <div className="lg:w-3/5 flex flex-col gap-space-lg relative z-10">
 <div className="flex items-center gap-space-xs">
-<span className="font-mono-meta text-mono-meta text-primary font-semibold">07 // INITIALIZE HANDSHAKE</span>
+<span className="font-mono-meta text-mono-meta text-primary font-semibold">08 // INITIALIZE HANDSHAKE</span>
 <span className="text-outline">-</span>
 <span className="font-mono-meta text-mono-meta text-on-surface-variant uppercase">OPEN FOR CONVERSATIONS</span>
 </div>
@@ -823,7 +851,7 @@ export function StitchPage() {
 {/* Agent profiles reference */}
 <div className="flex flex-wrap items-center justify-between gap-2 pt-space-xs font-mono-meta text-[11px] text-outline">
 <span>MACHINE READABLE:</span>
-<span className="text-primary">/llms.txt • /profile.md</span>
+<span className="text-primary">/llms.txt • /llms-full.txt • /profile.md • /#faq</span>
 </div>
 </div>
 </div>
@@ -831,7 +859,7 @@ export function StitchPage() {
 <StitchContactForm />
 </div>
 </section>
-</div></main><footer className="w-full bg-surface-container-lowest mt-margin"><div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div className="flex flex-col gap-space-xs"><div className="flex items-center gap-space-sm"><img alt="Mohit Nagda logo" className="h-6 w-6 rounded object-cover" src="/favicon.jpg"/><span className="font-headline-sm text-headline-sm text-on-surface uppercase">Mohit Nagda</span></div><p className="font-mono-meta text-mono-meta text-on-surface-variant">AI Systems Engineer // Architecture, Inference &amp; Scaled Deployment</p></div><div className="flex flex-wrap items-center gap-space-lg font-mono-metric text-mono-metric"><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/mohitt38" rel="noopener noreferrer" target="_blank"><span className="material-symbols-outlined text-[16px]">terminal</span><span className="">github.com/mohitt38</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://www.linkedin.com/in/mohitnagda/" rel="noopener noreferrer" target="_blank"><SocialGlyph name="linkedin" /><span>LinkedIn</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://www.instagram.com/_.mohiittt__/" rel="noopener noreferrer" target="_blank"><SocialGlyph name="instagram" /><span>Instagram</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://x.com/mohitt_19" rel="noopener noreferrer" target="_blank"><SocialGlyph name="x" /><span>X</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="mailto:nagdamohit19@gmail.com"><span className="material-symbols-outlined text-[16px]">mail</span><span>nagdamohit19@gmail.com</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/919601258617" rel="noopener noreferrer" target="_blank"><span className="material-symbols-outlined text-[16px]">chat</span><span className="">+91 96012 58617</span></a></div></div><div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter py-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm"><span className="font-mono-meta text-mono-meta text-outline">© 2025 Mohit Nagda. All systems operational.</span><span className="font-mono-meta text-mono-meta text-outline">LATENCY: 12ms // VERIFIED BUILD #4092</span></div></footer>
+</div></main><footer className="w-full bg-surface-container-lowest mt-margin"><div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div className="flex flex-col gap-space-xs"><div className="flex items-center gap-space-sm"><img alt="Mohit Nagda logo" className="h-6 w-6 rounded object-cover" src="/favicon.jpg"/><span className="font-headline-sm text-headline-sm text-on-surface uppercase">Mohit Nagda</span></div><p className="font-mono-meta text-mono-meta text-on-surface-variant">AI Systems Engineer // Architecture, Inference &amp; Scaled Deployment</p></div><div className="flex flex-wrap items-center gap-space-lg font-mono-metric text-mono-metric"><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/mohitt38" rel="noopener noreferrer" target="_blank"><span className="material-symbols-outlined text-[16px]">terminal</span><span className="">github.com/mohitt38</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://www.linkedin.com/in/mohitnagda/" rel="noopener noreferrer" target="_blank"><SocialGlyph name="linkedin" /><span>LinkedIn</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://www.instagram.com/_.mohiittt__/" rel="noopener noreferrer" target="_blank"><SocialGlyph name="instagram" /><span>Instagram</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://x.com/mohitt_19" rel="noopener noreferrer" target="_blank"><SocialGlyph name="x" /><span>X</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="mailto:nagdamohit19@gmail.com"><span className="material-symbols-outlined text-[16px]">mail</span><span>nagdamohit19@gmail.com</span></a><a className="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/919601258617" rel="noopener noreferrer" target="_blank"><span className="material-symbols-outlined text-[16px]">chat</span><span className="">+91 96012 58617</span></a></div></div><div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter py-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm"><span className="font-mono-meta text-mono-meta text-outline">© 2026 Mohit Nagda. All systems operational.</span><span className="font-mono-meta text-mono-meta text-outline">LATENCY: 12ms // VERIFIED BUILD #4092</span></div></footer>
     </>
   )
 }

@@ -2,14 +2,14 @@ export const site = {
   url: "https://mohit-nagda.vercel.app",
   title: "Mohit Nagda | AI Engineer - Generative AI, RAG & Python",
   description:
-    "Mohit Nagda is an AI Engineer in Udaipur building practical tools with Generative AI, LLMs, RAG, and Python - farming chatbots, document summarizers, meeting-to-task helpers, and OCR. Open to roles and collaboration.",
+    "Mohit Nagda - strong AI engineer who vibe-codes with full coverage. Production LLM pipelines, RAG, clinical NLP, Python backends: farming chatbots, summarizers, meeting helpers, OCR. Open to roles.",
   positioning: "AI Engineer",
-  roles: "Generative AI • RAG • Python",
+  roles: "LLM pipelines • RAG • Clinical NLP • Python",
   /** Plain-language line for non-tech visitors (SEO keywords stay in title/meta). */
   plainPitch:
-    "I build AI tools that answer questions, summarize documents, and turn meetings into clear next steps.",
+    "I build complete AI tools that answer questions, summarize documents, and turn meetings into clear next steps - no half-done work.",
   statement:
-    "Building real-world AI systems across Generative AI, LLMs, RAG, NLP and backend development.",
+    "Strong coder first. Vibe coding with full coverage. LLM pipelines, RAG, clinical NLP, and Python backends that ship complete.",
   hireFor: [
     "AI chatbots and Q&A assistants",
     "Document and meeting productivity tools",
