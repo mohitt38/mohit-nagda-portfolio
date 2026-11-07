@@ -47,7 +47,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</llms.txt>; rel=\"describedby\", </llms-full.txt>; rel=\"alternate\"; type=\"text/plain\", </profile.md>; rel=\"alternate\"; type=\"text/markdown\", </#faq>; rel=\"help\""
+          "value": "</llms.txt>; rel=\"describedby\", </llms-full.txt>; rel=\"alternate\"; type=\"text/plain\", </profile.md>; rel=\"alternate\"; type=\"text/markdown\", <https://mohit-nagda.vercel.app/#faq>; rel=\"help\""
         }
       ]
     }
